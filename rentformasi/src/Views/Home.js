@@ -8,7 +8,7 @@ class Home extends Component{
     render(){
         return(
             <div className="page-wrapper">
-                <div className="section hero-section">
+                {/* <div className="section hero-section">
                     <div className="wrapper text-white">
                         <div className="hero-intro"> 
                             <div className="title">
@@ -17,7 +17,7 @@ class Home extends Component{
                             <h1>100% Aman & Nyaman</h1><NavLink to="/barang" className="button w-button">Lihat Katalog</NavLink>
                         </div>
                     </div>
-                </div>
+                </div> */}
 
                 <div id="Scroll-Section" className="section haze">
                     <div className="wrapper">
