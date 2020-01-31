@@ -34,14 +34,7 @@ const SignIn = () => {
                 </a>
               </p>
               <div className="text-center mb-3">
-                <MDBBtn
-                  type="button"
-                  gradient="blue"
-                  rounded
-                  className="btn-block z-depth-1a"
-                >
-                  Sign in
-                </MDBBtn>
+                <button className="button w-button">Sign In</button>
               </div>
               <p className="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2">
 

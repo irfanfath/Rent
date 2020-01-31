@@ -18,7 +18,7 @@ class DataPemesan extends Component{
                                         <input type="email" className="input w-input" name="Contact-Email" data-name="Contact Email" placeholder="Your contact email" id="Contact-Email" required="" />
                                         <label className="label">Alamat Pengiriman</label>
                                         <textarea id="Contact-Message" name="Contact-Message" placeholder="Message text..." data-name="Contact Message" required="" className="input text-area w-input"></textarea>
-                                        <NavLink to="/selesai">
+                                        <NavLink to="/tagihan">
                                             <ButtonSewa/>
                                         </NavLink>
                                     </form>
@@ -30,11 +30,11 @@ class DataPemesan extends Component{
                                 <div>+1 213 974-3898</div><a href="mailto:Your Email Here?subject=ToyStore" className="link">toystore@template.com</a>
                                 <div className="contact-social">
                                     <h5 className="contact-social-heading">Follow Us</h5>
-                                    <a href="https://elasticthemes.com" target="_blank" className="contact-social-link twitter w-inline-block"><img src="https://assets.website-files.com/5badda2935e11303a89a461e/5bae5eec5227792568635e37_twitter-icon-white.svg" alt="" /></a>
-                                    <a href="https://elasticthemes.com" target="_blank" className="contact-social-link facebook w-inline-block"><img src="https://assets.website-files.com/5badda2935e11303a89a461e/5bae5eec3cb36463d4cf4661_facebook-icon-white.svg" alt="" /></a>
-                                    <a href="https://elasticthemes.com" target="_blank" className="contact-social-link insta w-inline-block"><img src="https://assets.website-files.com/5badda2935e11303a89a461e/5bae5eec7fe624275552217c_instagram-icon-white.svg" alt="" /></a>
-                                    <a href="https://elasticthemes.com" target="_blank" className="contact-social-link pinterest w-inline-block"><img src="https://assets.website-files.com/5badda2935e11303a89a461e/5bae5eec6e93377c0bbdba8a_pinterest-icon-white.svg" alt="" /></a>
-                                    <a href="https://elasticthemes.com" target="_blank" className="contact-social-link youtube w-inline-block"><img src="https://assets.website-files.com/5badda2935e11303a89a461e/5bae5eecfff242b7c309e311_youtube-icon.svg" alt="" /></a>
+                                    <div className="contact-social-link twitter w-inline-block"><img src="https://assets.website-files.com/5badda2935e11303a89a461e/5bae5eec5227792568635e37_twitter-icon-white.svg" alt="" /></div>
+                                    <div className="contact-social-link facebook w-inline-block"><img src="https://assets.website-files.com/5badda2935e11303a89a461e/5bae5eec3cb36463d4cf4661_facebook-icon-white.svg" alt="" /></div>
+                                    <div className="contact-social-link insta w-inline-block"><img src="https://assets.website-files.com/5badda2935e11303a89a461e/5bae5eec7fe624275552217c_instagram-icon-white.svg" alt="" /></div>
+                                    <div className="contact-social-link pinterest w-inline-block"><img src="https://assets.website-files.com/5badda2935e11303a89a461e/5bae5eec6e93377c0bbdba8a_pinterest-icon-white.svg" alt="" /></div>
+                                    <div className="contact-social-link youtube w-inline-block"><img src="https://assets.website-files.com/5badda2935e11303a89a461e/5bae5eecfff242b7c309e311_youtube-icon.svg" alt="" /></div>
                                 </div>
                             </div>
                         </div>

@@ -41,7 +41,7 @@ class CartValue extends Component{
             ):
 
              (
-                <p>Nothing.</p>
+                <div className="title-wishlist">Anda Belum Menambahkan Wish List</div>
              )
              
        return(

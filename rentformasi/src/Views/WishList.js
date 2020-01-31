@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Link, NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { removeItem,addQuantity,subtractQuantity} from '../Component/Action/CartAction'
 import Recipe from '../Component/Recipe/Recipe';
 
-class Keranjang extends Component{
+class WishList extends Component{
 
     //to remove the item completely
     handleRemove = (id)=>{
@@ -52,7 +52,7 @@ class Keranjang extends Component{
             ):
 
              (
-                <div className="title-wishlist">Anda Belum Menambahkan Barang</div>
+                <div className="title-wishlist">Anda Belum Menambahkan Wish List</div>
              )
        return(
             <div className="section">
@@ -60,14 +60,14 @@ class Keranjang extends Component{
                     <div className="wrapper">
                         <div className="contacts">
                             <div className="form-wishlist">
-                                <h4 className="contact-heading">Order List Anda : </h4>
+                                <h4 className="contact-heading">Daftar Wish List Anda : </h4>
                                 {addedItems}
                                 <Recipe/>
                             </div>
                             <div className="checkout">
-                                <NavLink to="/inputdata" className="nav-link-product w-nav-link">
+                                {/* <NavLink to="/inputdata" className="nav-link-product w-nav-link">
                                     <input type="submit" value="Bayar Sekarang" className="w-commerce-commerceaddtocartbutton button" />
-                                </NavLink>
+                                </NavLink> */}
                             </div>
                         </div>
                     </div>
@@ -90,4 +90,4 @@ const mapDispatchToProps = (dispatch)=>{
         subtractQuantity: (id)=>{dispatch(subtractQuantity(id))}
     }
 }
-export default connect(mapStateToProps,mapDispatchToProps)(Keranjang)
+export default connect(mapStateToProps,mapDispatchToProps)(WishList)

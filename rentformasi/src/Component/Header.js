@@ -4,8 +4,8 @@ import ButtonLogin from "./Button/ButtonLogin";
 import {
     Modal
   } from "reactstrap";
-import CartValue from "./Modal/CartValue";
-// import SignIn from "../Modals/SignIn";
+// import CartValue from "./Modal/CartValue";
+import SignIn from "./Modal/SignIn";
 
 class Header extends Component{
     state = {
@@ -34,18 +34,18 @@ class Header extends Component{
                                 <NavLink to="/coba"><i className="material-icons">cart</i></NavLink>
                             </nav>
                             <div className="w-commerce-commercecartopenlink cart-button w-inline-block">
-                                <div className="w-inline-block" onClick={() => this.toggleModal("exampleModal")}>Keranjang</div>
-                                <img src="https://assets.website-files.com/5badda2935e11303a89a461e/5baf75c3bf02346640399fec_cart-icon.svg" alt="" className="cart-icon" onClick={() => this.toggleModal("exampleModal")} />
+                                <NavLink to="/wish" className="w-inline-block">Wish List</NavLink>
+                                <img src="https://img.icons8.com/material-outlined/24/000000/wish-list.png" alt="" className="cart-icon" onClick={() => this.toggleModal("exampleModal")} />
                                 <div className="w-commerce-commercecartopenlinkcount item-count" onClick={() => this.toggleModal("exampleModal")}>0</div>
                             </div>
-                                <Modal
+                                {/* <Modal
                                     className="modal-dialog-centered"
                                     isOpen={this.state.exampleModal}
                                     toggle={() => this.toggleModal("exampleModal")}
                                     >
                                     <div className="modal-header">
                                         <h5 className="modal-title" id="exampleModalLabel">
-                                        Keranjang Anda
+                                        Wish List Anda
                                         </h5>
                                         <button
                                         aria-label="Close"
@@ -59,14 +59,11 @@ class Header extends Component{
                                     </div>
                                     <CartValue/>
                                     <div className="modal-footer">
-                                        <NavLink to="/barang" className="nav-link-product w-nav-link">
-                                            <input type="submit" value="Sewa Lagi" className="w-commerce-commerceaddtocartbutton button" onClick={() => this.toggleModal("exampleModal")}/>
-                                        </NavLink>
-                                        <NavLink to="/inputdata" className="nav-link-product w-nav-link">
-                                            <input type="submit" value="Bayar Sekarang" className="w-commerce-commerceaddtocartbutton button" onClick={() => this.toggleModal("exampleModal")}/>
+                                        <NavLink to="/keranjang" className="nav-link-product w-nav-link">
+                                            <input type="submit" value="Lihat Semua" className="w-commerce-commerceaddtocartbutton button" onClick={() => this.toggleModal("exampleModal")}/>
                                         </NavLink>
                                     </div>
-                                </Modal>
+                                </Modal> */}
                         </div>
                         <div className="nav-link w-nav-link" onClick={() => this.toggleModal("loginModal")}><ButtonLogin/>
                             <Modal
@@ -74,7 +71,7 @@ class Header extends Component{
                                 isOpen={this.state.loginModal}
                                 toggle={() => this.toggleModal("loginModal")}
                                 >
-                                {/* <SignIn/> */}
+                                <SignIn/>
                                 <div className="modal-footer">
                                 <p className="font-small grey-text d-flex justify-content-end">
                                     Belum Punya Akun?

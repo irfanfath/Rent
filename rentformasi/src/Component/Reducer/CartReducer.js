@@ -4,7 +4,8 @@ import Item3 from '../Images/item4.jpg'
 import Item4 from '../Images/item4.jpg'
 import Item5 from '../Images/item5.jpg'
 import Item6 from '../Images/item6.jpg'
-import { ADD_TO_CART,REMOVE_ITEM,SUB_QUANTITY,ADD_QUANTITY,ADD_SHIPPING } from '../Action/ActionTypes/Cart-Action'
+import { ADD_TO_CART,REMOVE_ITEM,SUB_QUANTITY,ADD_QUANTITY,ADD_SHIPPING} from '../Action/ActionTypes/Cart-Action'
+// import { FETCH_REQUEST, FETCH_SUCCESS } from '../Action/ActionTypes/Cart-Action'
 
 const initState = {
     items: [
@@ -15,11 +16,20 @@ const initState = {
         {id:5,title:'Cropped-sho', desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.", price:160,img: Item5},
         {id:6,title:'Blues', desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.",price:90,img: Item6}
     ],
+    // items: [],
     addedItems:[],
     total: 0
 }
 
 const CartReducer= (state = initState,action)=>{
+    // if(action.type === FETCH_REQUEST){
+    //     return state
+    // } else if(action.type === FETCH_SUCCESS){
+    //     return{
+    //         ...state, 
+    //         items: action.payload
+    //     }
+    // }
     //INSIDE HOME COMPONENT
     if(action.type === ADD_TO_CART){
           let addedItem = state.items.find(item=> item.id === action.id)

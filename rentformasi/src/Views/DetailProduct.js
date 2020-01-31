@@ -2,11 +2,7 @@ import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import axios from "axios"
 import ListRelated from "../Component/ListData/ListRelated";
-import ButtonSewa from "../Component/Button/ButtonSewa";
 // import {MDBIcon} from "mdbreact";
-
-// import Related from "../Component/Related";
-// import JumlahSewa from "../Component/Forms/JumlahSewa";
 // import ModalsCart from "../Component/Modals/ModalsCart";
 // import DatePick from "../Component/Forms/DatePick";
 // import PageProfile from "../Component/Card/PageProfile";
@@ -40,38 +36,26 @@ class DetailProduct extends Component{
                             <div className="product-info">
                                 <h2>{this.state.post.title}</h2>
                                 <div className="rating">
-                                    <span>&#11088;</span>
-                                    <span>&#11088;</span>
-                                    <span>&#11088;</span>
-                                    <span>&#11088;</span>
+                                    <span role="img" aria-label="star">&#11088;</span>
+                                    <span role="img" aria-label="star">&#11088;</span>
+                                    <span role="img" aria-label="star">&#11088;</span>
+                                    <span role="img" aria-label="star">&#11088;</span>
                                 </div>
                                 <p className="text-grey">25 Ulasan&nbsp;&nbsp;&nbsp;&nbsp;500 transaksi&nbsp;&nbsp;&nbsp;&nbsp;5 Pertanyaan</p>
                                 <div className="product-price">Rp. 500.000</div>
-                                    {/* <div class="full-width">
-                                        <form className="w-commerce-commerceaddtocartform add-to-cart">
-                                            <label className="label">Jumlah Sewa</label>
-                                                <input type="number" className="w-commerce-commerceaddtocartquantityinput input quantity-input" placeholder="1" id="nama_barang1" required="" />
-                                        </form>
-                                    </div> */}
                                     <div className="w-form">
                                         <label className="label">Tanggal Sewa</label>
                                         <form className="subscribe-form">
-                                            <input type="date" className="input subscribe-input w-input" placeholder="Tanggal Sewa" id="email-2" required="" />
-                                            <input type="date" className="input subscribe-input w-input" placeholder="Tanggal Kembali" id="email-2" required="" />
+                                            <input type="date" className="input subscribe-input w-input" placeholder="Tanggal Sewa" id="tanggalsewa" required="" />
+                                            <input type="date" className="input subscribe-input w-input" placeholder="Tanggal Kembali" id="tanggalkembali" required="" />
                                         </form>
                                     </div>
-                                {/* <div className="full-width">
-                                    <form className="w-commerce-commerceaddtocartform add-to-cart">
-                                        <label className="label">Jumlah Sewa</label>
-                                        <JumlahSewa/>
-                                        <label className="label">Tanggal Sewa</label>
-                                        <DatePick/>
-                                    </form>
-                                </div> */}
-                                {/* <ModalsCart/> */}
-                                <NavLink to="/inputdata">
-                                    <ButtonSewa/>
-                                </NavLink>
+                                    <NavLink to="/keranjang" className="nav-link-product w-nav-link">
+                                        <input type="submit" value="Sewa Sekarang" className="w-commerce-commerceaddtocartbutton button" />
+                                    </NavLink>
+                                    <NavLink to="/wish" className="nav-link-product w-nav-link">
+                                        <input type="submit" value="Add To Wish List" className="w-commerce-commerceaddtocartbutton button" />
+                                    </NavLink>
                             </div>
                             <div className="product-image-wrapper"><img data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_main_image_4dr%22%2C%22to%22%3A%22src%22%7D%5D" src="https://assets.website-files.com/5baddb6a35e113da0e9a4802/5bae12942ca03553bf0d536c_33903-2-plush-toy-transparent-image-min.png" alt="" sizes="(max-width: 479px) 100vw, (max-width: 767px) 75vw, (max-width: 991px) 76vw, 32vw" srcSet="https://assets.website-files.com/5baddb6a35e113da0e9a4802/5bae12942ca03553bf0d536c_33903-2-plush-toy-transparent-image-min-p-500.png 500w, https://assets.website-files.com/5baddb6a35e113da0e9a4802/5bae12942ca03553bf0d536c_33903-2-plush-toy-transparent-image-min.png 1200w" className="full-width" /></div>
                                 <div className="product-details-wrapper">

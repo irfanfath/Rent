@@ -39,7 +39,7 @@ class Home extends Component{
                 <div className="section haze no-padding-top">
                     <div className="wrapper">
                         <div className="shop-header">
-                            <h3 className="no-margin">Sewa Penginapan</h3><a href="#" className="link arrow-link">Lihat Semua</a>
+                            <h3 className="no-margin">Sewa Penginapan</h3><div className="link arrow-link">Lihat Semua</div>
                             <div className="shop-header-line">
                                 <div className="shop-header-color"></div>
                             </div>
@@ -81,14 +81,14 @@ class Home extends Component{
                             <h2 className="no-margin-bottom">Vendor Kami</h2>
                         </div>
                         <div className="instagram">
-                            <a className="instagram-link w-inline-block"><img src="https://assets.website-files.com/5badda2935e11303a89a461e/5badecf79395558fbeb88a49_instagram-01.jpg" alt="" className="full-width" /></a>
-                            <a className="instagram-link w-inline-block"><img src="https://assets.website-files.com/5badda2935e11303a89a461e/5badecf735e113f8679a57e6_instagram-02.jpg" alt="" className="full-width" /></a>
-                            <a className="instagram-link w-inline-block"><img src="https://assets.website-files.com/5badda2935e11303a89a461e/5badecf735e11327b99a57e7_instagram-03.jpg" alt="" className="full-width" /></a>
-                            <a className="instagram-link w-inline-block"><img src="https://assets.website-files.com/5badda2935e11303a89a461e/5badecf7939555df08b88a48_instagram-04.jpg" alt="" className="full-width" /></a>
-                            <a className="instagram-link w-inline-block"><img src="https://assets.website-files.com/5badda2935e11303a89a461e/5badecf7939555514eb88a4a_instagram-05.jpg" alt="" className="full-width" /></a>
-                            <a  className="instagram-link w-inline-block"><img src="https://assets.website-files.com/5badda2935e11303a89a461e/5badecf71f2da2228d17155f_instagram-06.jpg" alt="" className="full-width" /></a>
+                            <div className="instagram-link w-inline-block"><img src="https://assets.website-files.com/5badda2935e11303a89a461e/5badecf79395558fbeb88a49_instagram-01.jpg" alt="" className="full-width" /></div>
+                            <div className="instagram-link w-inline-block"><img src="https://assets.website-files.com/5badda2935e11303a89a461e/5badecf735e113f8679a57e6_instagram-02.jpg" alt="" className="full-width" /></div>
+                            <div className="instagram-link w-inline-block"><img src="https://assets.website-files.com/5badda2935e11303a89a461e/5badecf735e11327b99a57e7_instagram-03.jpg" alt="" className="full-width" /></div>
+                            <div className="instagram-link w-inline-block"><img src="https://assets.website-files.com/5badda2935e11303a89a461e/5badecf7939555df08b88a48_instagram-04.jpg" alt="" className="full-width" /></div>
+                            <div className="instagram-link w-inline-block"><img src="https://assets.website-files.com/5badda2935e11303a89a461e/5badecf7939555514eb88a4a_instagram-05.jpg" alt="" className="full-width" /></div>
+                            <div className="instagram-link w-inline-block"><img src="https://assets.website-files.com/5badda2935e11303a89a461e/5badecf71f2da2228d17155f_instagram-06.jpg" alt="" className="full-width" /></div>
                         </div>
-                        <a href="https://instagram.com" target="_blank" className="button w-button">Lihat Lainnya</a>
+                        <div className="button w-button">Lihat Lainnya</div>
                     </div>
                 </div>
             </div>         

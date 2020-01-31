@@ -15,8 +15,9 @@ import InputData from "./Views/InputData";
 import Selesai from "./Views/Selesai";
 import Percobaan from "./Views/Percobaan";
 import Keranjang from "./Views/Keranjang";
+import WishList from "./Views/WishList";
+import Tagihan from "./Views/Tagihan";
 // import Proses_Transaksi from "./Views/Proses_Transaksi";
-// import Konfirmasi from "./Views/Konfirmasi";
 // import SelesaiTransaksi from "./Views/SelesaiTransaksi";
 // import Sewaan from "./Views/Sewaan";
 // import Cart from "./Views/Cart";
@@ -38,9 +39,10 @@ class Main extends Component {
             <Route path="/selesai" component={Selesai}/>
             <Route path="/coba" component={Percobaan}/>
             <Route path="/keranjang" component={Keranjang}/>
+            <Route path="/wish" component={WishList}/>
+            <Route path="/tagihan" component={Tagihan}/>
             {/* 
             <Route path="/proses_transaksi" component={Proses_Transaksi}/>
-            <Route path="/konfirmasi" component={Konfirmasi}/>
             <Route path="/selesaitransaksi" component={SelesaiTransaksi}/>
             <Route path="/cart" component={Cart}/>
           */}
