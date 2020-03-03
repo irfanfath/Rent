@@ -14,7 +14,9 @@ class Barang extends Component{
 
     getPostAPI = () => {
         // axios.get('https://jsonplaceholder.typicode.com/albums?_limit=10')
-         // axios.get('https://jsonplaceholder.typicode.com/albums?_sort=id')
+        // axios.get('https://jsonplaceholder.typicode.com/albums?_sort=id')
+        // axios.get('http://localhost:3001/posts?_limit=10&id=2')
+
         axios.get('http://localhost:3001/posts')
         .then((result)=>{
             this.setState({
