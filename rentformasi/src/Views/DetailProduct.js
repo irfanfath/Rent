@@ -35,7 +35,6 @@ class DetailProduct extends Component{
     // }
 
     render(){
-        // var item = this.props.items
         return(
             <div className="page-wrapper">   
                 <div className="section no-padding-vertical">
