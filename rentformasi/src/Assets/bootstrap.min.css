@@ -10061,6 +10061,10 @@ button.bg-dark:hover {
     text-align: center!important
 }
 
+.text-login {
+    text-align: center!important;
+    margin-top: 5%;
+}
 @media (min-width:576px) {
     .text-sm-left {
         text-align: left!important

@@ -4754,7 +4754,7 @@ p {
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
-    background-color: #f8f8f8;
+    background-color: #ffffff;
 }
 
 .sectionhomevendor {
@@ -5338,7 +5338,8 @@ p {
     display: -ms-flexbox;
     display: flex;
     width: 100%;
-    max-width: 570px;
+    max-width: 70%;
+    height: 100%;
     padding: 56px 48px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -5734,7 +5735,7 @@ p {
     -ms-flex: 1;
     flex: 1;
     border-radius: 16px;
-    background-color: #fff;
+    background-color: #ffffff;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
     -webkit-transition: box-shadow 300ms ease, -webkit-transform 300ms ease;
     transition: box-shadow 300ms ease, -webkit-transform 300ms ease;
@@ -5742,6 +5743,7 @@ p {
     transition: transform 300ms ease, box-shadow 300ms ease, -webkit-transform 300ms ease;
     text-align: center;
     text-decoration: none;
+    box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.20);
 }
 
 .product-card:hover {
@@ -5870,7 +5872,7 @@ p {
     align-items: center;
     border-radius: 16px;
     background-color: #fff;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.20)
 }
 
 .subscribe-form-wrapper {
@@ -6137,7 +6139,7 @@ p {
     flex-wrap: wrap;
     border-radius: 16px;
     background-color: #fff;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.20);
 }
 
 .product-image-wrapper {
@@ -6209,6 +6211,15 @@ p {
     font-size: 32px;
     line-height: 32px;
     font-weight: 400;
+}
+
+.price-payment {
+    margin-bottom: 16px;
+        color: #a5c926;
+        font-size: 32px;
+        line-height: 16px;
+        font-weight: 600;
+
 }
 
 .product-details-wrapper {
@@ -6331,7 +6342,7 @@ p {
     align-items: flex-start;
     border-radius: 16px;
     background-color: #fff;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.20)
 }
 
 .keranjang {
@@ -6622,8 +6633,8 @@ p {
     display: flex;
     overflow: hidden;
     width: 100%;
-    margin-top: 56px;
     padding: 80px;
+    margin-top: 2%;
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
@@ -6632,8 +6643,19 @@ p {
     -ms-flex-align: start;
     align-items: flex-start;
     border-radius: 16px;
-    background-color: #fff;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+    background-color: #ffffff;
+    box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.20);
+}
+
+.tagihan {
+    display: flex;
+    width: 100%;
+    padding: 3%;
+    margin-top: 2%;
+    flex-wrap: wrap;
+    border-radius: 16px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.20);
 }
 
 .boxbarang {
@@ -7211,10 +7233,6 @@ p {
         -webkit-justify-content: flex-start;
         -ms-flex-pack: start;
         justify-content: flex-start;
-    }
-    .hero-intro {
-        max-width: 480px;
-        padding: 40px;
     }
     .nav-top {
         padding-right: 8px;

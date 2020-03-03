@@ -19,7 +19,7 @@ class Home extends Component{
                     </div>
                 </div> */}
 
-                <div id="Scroll-Section" className="section haze">
+                <div id="Scroll-Section" className="section">
                     <div className="wrapper">
                         <div className="home-categories">
                             <div className="home-category-card"><img src="https://cdn.pixabay.com/photo/2019/09/04/11/48/men-4451373_960_720.png" sizes="(max-width: 479px) 100vw, (max-width: 991px) 176px, 220px" alt="" className="home-category-image-1" />
@@ -36,7 +36,7 @@ class Home extends Component{
                     </div>
                 </div>
 
-                <div className="section haze no-padding-top">
+                <div className="section no-padding-top">
                     <div className="wrapper">
                         <div className="shop-header">
                             <h3 className="no-margin">Sewa Penginapan</h3><div className="link arrow-link">Lihat Semua</div>
@@ -49,7 +49,7 @@ class Home extends Component{
                         </div>
                     </div>
                 </div>        
-                <div className="section haze no-padding-top">
+                <div className="section no-padding-top">
                     <div className="wrapper">
                         <div className="shop-header">
                             <h3 className="no-margin">Sewa Sarana Olahraga</h3><a href="/catalog" className="link arrow-link">Lihat Semua</a>
@@ -62,7 +62,7 @@ class Home extends Component{
                         </div>
                     </div>
                 </div>
-                <div id="More-About" className="sectionhomevendor">
+                <div id="More-About" className="section no-padding-top">
                     <div className="wrapper">
                         <div className="shop-header">
                                 <h3 className="no-margin">Paling Banyak Disewa</h3><a href="/catalog" className="link arrow-link">Lihat Lainnya</a>

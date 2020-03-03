@@ -3,7 +3,6 @@ import { Route, HashRouter } from "react-router-dom";
 import DynamicScrollToTop from "./Component/DynamicScrollToTop";
 import Header from "./Component/Header";
 import Footer from "./Component/Footer";
-
 import Home from "./Views/Home";
 import Barang from "./Views/Barang";
 import Jasa from "./Views/Jasa";
@@ -17,10 +16,10 @@ import Percobaan from "./Views/Percobaan";
 import Keranjang from "./Views/Keranjang";
 import WishList from "./Views/WishList";
 import Tagihan from "./Views/Tagihan";
+import Cart from "./Views/Cart";
 // import Proses_Transaksi from "./Views/Proses_Transaksi";
 // import SelesaiTransaksi from "./Views/SelesaiTransaksi";
 // import Sewaan from "./Views/Sewaan";
-// import Cart from "./Views/Cart";
  
 class Main extends Component {
   render() {
@@ -38,13 +37,13 @@ class Main extends Component {
             <Route path="/inputdata" component={InputData}/>
             <Route path="/selesai" component={Selesai}/>
             <Route path="/coba" component={Percobaan}/>
+            <Route path="/cart/" component={Cart}/>
             <Route path="/keranjang" component={Keranjang}/>
             <Route path="/wish" component={WishList}/>
             <Route path="/tagihan" component={Tagihan}/>
             {/* 
             <Route path="/proses_transaksi" component={Proses_Transaksi}/>
             <Route path="/selesaitransaksi" component={SelesaiTransaksi}/>
-            <Route path="/cart" component={Cart}/>
           */}
           <Footer/>
         </HashRouter>

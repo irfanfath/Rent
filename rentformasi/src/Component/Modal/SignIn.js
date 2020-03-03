@@ -5,10 +5,10 @@ const SignIn = () => {
   return (
     <MDBContainer>
             <MDBCardBody className="mx-4">
-              <div className="text-center">
-                <h3 className="dark-grey-text mb-5">
+              <div className="text-login">
+                <h2 className="dark-grey-text mb-5">
                   <strong>Sign in</strong>
-                </h3>
+                </h2>
               </div>
               <MDBInput
                 label="Username"
