@@ -1,8 +1,5 @@
 import React, { Component } from "react";
-import ListBarang from "../Component/ListData/ListBarang";
 import axios from 'axios';
-import Cari from "../Component/Forms/Cari";
-import Kategori from "../Component/Sidebar/Kategori";
 
 class Cart extends Component{
     state = {
@@ -30,7 +27,7 @@ class Cart extends Component{
         return(
             <div className="w-commerce-commercecartitem">
                 <div className="item-img"> 
-                    <img src="" className=""/>
+                    <img src="" alt="" className=""/>
                 </div>
             
                 <div className="w-commerce-commercecartiteminfo">

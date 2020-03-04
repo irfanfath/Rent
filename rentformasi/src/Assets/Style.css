@@ -352,6 +352,19 @@ html.w-mod-touch * {
     border-radius: 0
 }
 
+.detail-button {
+    display: inline-block;
+    padding: 9px 15px;
+    color: white;
+    border: 0;
+    line-height: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 0;
+    margin-left: 5%;
+    margin-top: 5%;
+}
+
 .w-button:hover {
     text-decoration: underline;
     color: #fff

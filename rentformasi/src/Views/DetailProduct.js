@@ -58,19 +58,15 @@ class DetailProduct extends Component{
                                             <input type="date" className="input subscribe-input w-input" placeholder="Tanggal Kembali" id="tanggalkembali" required="" />
                                         </form>
                                     </div>
-                                    <NavLink to="/keranjang" className="nav-link-product w-nav-link">
-                                        <input type="submit" value="Sewa Sekarang" className="w-commerce-commerceaddtocartbutton button" />
-                                    </NavLink>
-                                    <NavLink to="/wish" className="nav-link-product w-nav-link">
-                                        <input type="submit" value="Add To Wish List" className="w-commerce-commerceaddtocartbutton button" />
-                                    </NavLink>
+                                    <button className="button detail-button">Sewa Sekarang</button>
+                                    <button className="button detail-button">Add To Wish List</button>
                                     {/* <NavLink to="/keranjang" className="nav-link-product w-nav-link">
                                         <div className="product-card-price" onClick={()=>{this.handleClick(item.id)}}><i className="material-icons">add to cart</i></div>
                                     </NavLink> */}
-                            </div>
-                            <div className="product-image-wrapper">
-                                <img src="https://www.otomotifer.com/wp-content/uploads/2019/04/Mobil-City-Car-Murah-Honda.jpg" alt=""/>
-                            </div>
+                                </div>
+                                <div className="product-image-wrapper">
+                                    <img src="https://www.otomotifer.com/wp-content/uploads/2019/04/Mobil-City-Car-Murah-Honda.jpg" alt=""/>
+                                </div>
                                 <div className="product-details-wrapper">
                                     <div className="shop-header">
                                         <h5 className="no-margin">Detail Produk</h5>
