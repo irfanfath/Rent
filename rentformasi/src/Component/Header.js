@@ -18,6 +18,10 @@ class Header extends Component{
         });
       };
 
+      moveWish = () => {
+          window.location.href = "#/wish"
+      }
+
     render(){
         return(
             <div data-collapse="medium" data-animation="default" data-duration="400" className="nav-bar w-nav">
@@ -35,8 +39,8 @@ class Header extends Component{
                             </nav>
                             <div className="w-commerce-commercecartopenlink cart-button w-inline-block">
                                 <NavLink to="/wish" className="w-inline-block">WishList</NavLink>
-                                <img src="https://img.icons8.com/material-outlined/24/000000/wish-list.png" alt="" className="cart-icon" onClick={() => this.toggleModal("exampleModal")} />
-                                <div className="w-commerce-commercecartopenlinkcount item-count" onClick={() => this.toggleModal("exampleModal")}>0</div>
+                                <img src="https://img.icons8.com/material-outlined/24/000000/wish-list.png" alt="" className="cart-icon" onClick={this.moveWish} />
+                                <div className="w-commerce-commercecartopenlinkcount item-count">0</div>
                             </div>
                         </div>
                         <div className="w-commerce-commercecartopenlink cart-button w-inline-block" onClick={() => this.toggleModal("loginModal")}><ButtonLogin/>

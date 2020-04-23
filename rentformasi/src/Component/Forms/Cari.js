@@ -10,8 +10,8 @@ class Cari extends Component{
                         <form className="subscribe-form">
                             <input type="text" className="input subscribe-input w-input" placeholder="Nama Barang" id="nama_barang1" required="" />
                             <input type="text" className="input subscribe-input w-input" placeholder="Kategori Barang" id="kategori_barang1" required="" />
-                            <input type="date" className="input subscribe-input w-input" placeholder="Tanggal Sewa" id="tanggalsewa" required="" />
-                            <input type="date" className="input subscribe-input w-input" placeholder="Tanggal Kembali" id="tanggalkembali" required="" />
+                            <input type="date" className="input subscribe-input w-date" placeholder="Tanggal Sewa" id="tanggalsewa" required="" />
+                            <input type="date" className="input subscribe-input w-date" placeholder="Tanggal Kembali" id="tanggalkembali" required="" />
                             <input type="submit" value="Cari Barang" className="w-commerce-commerceaddtocartbutton button" />
                         </form>
                     </div>
