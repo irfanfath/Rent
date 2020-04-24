@@ -1,20 +1,20 @@
 import React from 'react';
 import { UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 
-export default function Lokasi () {
+export default function Kategori () {
   return (
     <UncontrolledDropdown>
       <DropdownToggle caret>
-        Lokasi
+        Pilih Kategori
       </DropdownToggle>
       <DropdownMenu>
-        <DropdownItem>DKI Jakarta</DropdownItem>
+        <DropdownItem>Kendaraan</DropdownItem>
         <DropdownItem divider />
-        <DropdownItem>Jawa Barat</DropdownItem>
+        <DropdownItem>Alat Berat</DropdownItem>
         <DropdownItem divider />
-        <DropdownItem>Jawa Tengah</DropdownItem>
+        <DropdownItem>Elektronik</DropdownItem>
         <DropdownItem divider />
-        <DropdownItem>Jawa Timur</DropdownItem>
+        <DropdownItem>Olahraga</DropdownItem>
       </DropdownMenu>
     </UncontrolledDropdown>
   );

@@ -2,9 +2,7 @@ import React, { Component } from "react";
 import ListBarang from "../Component/ListData/ListBarang";
 import axios from 'axios';
 import Cari from "../Component/Forms/Cari";
-import Kategori from "../Component/Sidebar/Kategori";
-// import Sorting from "../Component/Konten/Sorting";
-// import Kategori from "../Component/Sidebars/Kategori";
+import Sorting from "../Component/Dropdown/Sorting";
 // import PaginationPage from "../Component/Pagination/PaginationPage";
 
 class Barang extends Component{
@@ -39,8 +37,8 @@ class Barang extends Component{
             <Cari/>
             <div className="wrapper">
                 <div className="shop-header">
-                    <h3 className="no-margin w-hidden-small w-hidden-tiny">Semua Barang</h3>
-                    {/* <Sorting/> */}
+                    <h3 className="no-margin">Semua Barang</h3>
+                    <Sorting/>
                     <div className="shop-header-line">
                         <div className="shop-header-color green w-hidden-small w-hidden-tiny"></div>
                     </div>
@@ -61,7 +59,6 @@ class Barang extends Component{
                                             }
                                     </div>
                             </div>
-                            <Kategori/>
                         </div>
                     </div>
                 </div>

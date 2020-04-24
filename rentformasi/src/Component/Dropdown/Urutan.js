@@ -1,26 +1,23 @@
-import React, { Component } from "react";
-import { Dropdown } from 'react-bootstrap';
+import React from 'react';
+import { UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 
-class Urutan extends Component{
-    render(){
-        return(
-            <Dropdown>
-                <Dropdown.Toggle variant="" id="dropdown-basic">
-                    Urutkan Berdasarkan
-                </Dropdown.Toggle>
-
-                <Dropdown.Menu>
-                    <Dropdown.Item href="#/action-1">Harga Terendah</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Harga Tertinggi</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Paling Banyak Disewa</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Rating</Dropdown.Item>
-                </Dropdown.Menu>
-            </Dropdown>
-        )
-    }
+export default function Urutan () {
+  return (
+    <UncontrolledDropdown>
+      <DropdownToggle caret>
+        Urutkan Berdasarkan
+      </DropdownToggle>
+      <DropdownMenu>
+        <DropdownItem>Harga Terendah</DropdownItem>
+        <DropdownItem divider />
+        <DropdownItem>Harga Tertinggi</DropdownItem>
+        <DropdownItem divider />
+        <DropdownItem>Paling Banyak Disewa</DropdownItem>
+        <DropdownItem divider />
+        <DropdownItem>Rating Terbaik</DropdownItem>
+      </DropdownMenu>
+    </UncontrolledDropdown>
+  );
 }
 
-export default Urutan;
 
-
-// nanti pindahin ke ListData

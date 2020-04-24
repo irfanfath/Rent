@@ -4,7 +4,6 @@ import { NavLink } from "react-router-dom";
 import { connect } from 'react-redux'
 import { addToCart } from '../Component/Action/CartAction'
 import Cari from '../Component/Forms/Cari';
-import Kategori from '../Component/Sidebar/Kategori';
 
  class Percobaan extends Component{
     
@@ -51,7 +50,6 @@ import Kategori from '../Component/Sidebar/Kategori';
                                     {itemList}
                                     </div>
                             </div>
-                            <Kategori/>
                         </div>
                     </div>
                 </div>

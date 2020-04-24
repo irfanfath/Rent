@@ -1,22 +1,15 @@
 import React, { Component } from "react";
+import Kategori from "../Dropdown/Kategori";
 
 class Cari extends Component{
     render(){
         return(
-        <div className="section no-padding-top">
-            <div className="wrapper side-paddings">
-                <div data-w-id="e89551e9-b5ae-51a6-c418-02c90497790c" className="subscribe">
-                    <div className="w-form">
-                        <form className="subscribe-form">
-                            <input type="text" className="input subscribe-input w-input" placeholder="Nama Barang" id="nama_barang1" required="" />
-                            <input type="text" className="input subscribe-input w-input" placeholder="Kategori Barang" id="kategori_barang1" required="" />
-                            <input type="date" className="input subscribe-input w-date" placeholder="Tanggal Sewa" id="tanggalsewa" required="" />
-                            <input type="date" className="input subscribe-input w-date" placeholder="Tanggal Kembali" id="tanggalkembali" required="" />
+        <div className="margin-cari">
+                <div className="subscribe">
+                            <Kategori/>
+                            <input type="text" className="input subscribe-input w-input" placeholder="Masukan Kata Kunci Nama Barang" id="nama_barang1" />
                             <input type="submit" value="Cari Barang" className="w-commerce-commerceaddtocartbutton button" />
-                        </form>
-                    </div>
                 </div>
-            </div>
         </div>
         )
     }

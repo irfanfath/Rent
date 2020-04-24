@@ -4848,7 +4848,7 @@ p {
     display: -ms-flexbox;
     display: flex;
     width: 100%;
-    max-width: 1200px;
+    max-width: 95%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
@@ -5197,6 +5197,11 @@ p {
     -ms-flex-align: center;
     align-items: center;
     text-align: center;
+}
+
+.margin-cari {
+    margin-bottom: 4%;
+    width: 80%;
 }
 
 .intro.no-margin {
@@ -5909,7 +5914,7 @@ p {
     display: -ms-flexbox;
     display: flex;
     width: 100%;
-    padding: 48px;
+    padding: 40px;
     -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
@@ -5946,9 +5951,6 @@ p {
 }
 
 .subscribe-form {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
     -webkit-justify-content: center;
@@ -5962,7 +5964,7 @@ p {
 
 .input {
     height: 48px;
-    margin-bottom: 24px;
+    text-align: center;
     padding-right: 28px;
     padding-left: 28px;
     border: 2px solid #e5e5e5;
@@ -7420,17 +7422,6 @@ p {
         -ms-flex-direction: column;
         flex-direction: column;
         text-align: center;
-    }
-    .subscribe-form {
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        -webkit-box-align: stretch;
-        -webkit-align-items: stretch;
-        -ms-flex-align: stretch;
-        align-items: stretch;
     }
     .input.subscribe-input {
         margin-bottom: 20px;
