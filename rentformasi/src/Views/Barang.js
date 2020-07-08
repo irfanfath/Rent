@@ -15,7 +15,7 @@ class Barang extends Component{
         // axios.get('https://jsonplaceholder.typicode.com/albums?_sort=id')
         // axios.get('http://localhost:3001/posts?_limit=10&id=2')
 
-        axios.get('http://localhost:3001/posts')
+        axios.get('http://localhost:3004/posts')
         .then((result)=>{
             this.setState({
                 post: result.data

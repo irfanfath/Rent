@@ -8,7 +8,7 @@ class StatusPesanan extends Component{
     }
 
     getPostAPI = () => {
-        axios.get('http://localhost:3001/wishlist')
+        axios.get('http://localhost:3004/wishlist')
         .then((result)=>{
             this.setState({
                 post: result.data

@@ -19,6 +19,7 @@ import Tagihan from "./Views/Tagihan";
 import Cart from "./Views/Cart";
 import StatusPesanan from "./Views/StatusPesanan";
 import LacakPesanan from "./Views/LacakPesanan";
+import UserProfile from "./Views/UserProfile";
 // import Proses_Transaksi from "./Views/Proses_Transaksi";
 // import SelesaiTransaksi from "./Views/SelesaiTransaksi";
 // import Sewaan from "./Views/Sewaan";
@@ -30,6 +31,7 @@ class Main extends Component {
           <Header/>
           <DynamicScrollToTop/>
             <Route exact path="/" component={Home}/>
+            <Route path="/profile" component={UserProfile}/>
             <Route path="/barang" component={Barang}/>
             <Route path="/jasa" component={Jasa}/>
             <Route path="/bantuan" component={Bantuan}/>
