@@ -16,12 +16,12 @@ class ListLacak extends Component{
                                     </div>
                                         <div className="side-block no-padding-right">
                                             <div className="side-info">
-                                                <div className="title-lacak">Verifikasi Pembayaran Oleh Sistem</div>
+                                                <div className="title-lacak">Status Pesanan Anda</div>
                                                 <div className="divider"></div>
-                                                <p className="text-grey">A successful marketing plan relies heavily on the pulling-power of advertising copy. Writing result-oriented ad copy is difficult, as it must appeal to, entice, and convince consumers to take action. There is no magic formula to write perfect ad copy</p>
+                                                <div className="text-grey">Sedang dalam proses verifikasi oleh sistem. Proses verifikasi pesananan anda maksimal 2 x 24 jam </div>
                                                 <div className="link arrow-link" onClick={()=> this.setState({showDetail: true})} >Lihat Detail Status Pesanan</div>
                                                 {
-                                                    this.state.showDetail ? <DetailLacak /> : null
+                                                    this.state.showDetail ? <DetailLacak onClose={()=> this.setState({showDetail: false})} /> : null
                                                 }                                               
                                             </div>
                                         </div>

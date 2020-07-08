@@ -60,12 +60,9 @@ class DetailProduct extends Component{
                                     </div>
                                     <NavLink to="/keranjang"><button className="button detail-button">Sewa Sekarang</button></NavLink>
                                     <NavLink to="/wish"><button className="button detail-button">Add To Wish List</button></NavLink>
-                                    {/* <NavLink to="/keranjang" className="nav-link-product w-nav-link">
-                                        <div className="product-card-price" onClick={()=>{this.handleClick(item.id)}}><i className="material-icons">add to cart</i></div>
-                                    </NavLink> */}
                                 </div>
                                 <div className="product-image-wrapper">
-                                    <img src="https://www.otomotifer.com/wp-content/uploads/2019/04/Mobil-City-Car-Murah-Honda.jpg" alt=""/>
+\                                    <img src="https://www.otomotifer.com/wp-content/uploads/2019/04/Mobil-City-Car-Murah-Honda.jpg" alt=""/>
                                 </div>
                                 <div className="product-details-wrapper">
                                     <div className="shop-header">

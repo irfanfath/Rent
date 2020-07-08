@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import CartReducer from "./Component/Reducer/CartReducer";
 import "./Assets/Style.css";
+import "./Assets/newstyle.css";
 import "./Assets/bootstrap.min.css";
 import "./Assets/mdb.min.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";

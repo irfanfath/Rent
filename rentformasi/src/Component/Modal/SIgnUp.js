@@ -1,29 +1,24 @@
-import React, { Component } from "react";
+import React from "react";
 import { MDBContainer, MDBCardBody, MDBInput, MDBBtn, MDBIcon } from 'mdbreact';
-import ButtonLogin from "../Button/ButtonLogin";
-import { Modal } from "reactstrap";
-import SignUp from "./SIgnUp";
 
-class SignIn extends Component {
-  state = {
-    RegisterModal: false
-  };
-  toggleModal = state => {
-    this.setState({
-      [state]: !this.state[state],
-    });
-  };
-
-  
-  render () {
-    return (
-      <MDBContainer>
+const SignUp = () => {
+  return (
+    <MDBContainer>
             <MDBCardBody className="mx-4">
               <div className="text-login">
                 <h2 className="dark-grey-text mb-5">
-                  <strong>Sign in</strong>
+                  <strong>Sign Up</strong>
                 </h2>
               </div>
+              <MDBInput
+                label="Email"
+                icon="at"
+                group
+                type="email"
+                validate
+                error="wrong"
+                success="right"
+              />
               <MDBInput
                 label="Username"
                 icon="user"
@@ -41,17 +36,18 @@ class SignIn extends Component {
                 validate
                 containerClass="mb-0"
               />
-              <p className="font-small blue-text d-flex justify-content-end pb-3">
-                Lupa
-                <a href="#!" className="blue-text ml-1">
-                  Password?
-                </a>
-              </p>
+              <MDBInput
+                label="Konfirmasi Password"
+                icon="lock"
+                group
+                type="password"
+                validate
+                containerClass="mb-0"
+              />
               <div className="text-center mb-3">
-                <button className="button w-button">Sign In</button>
+                <button className="button w-button">Buat Akun</button>
               </div>
               <p className="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2">
-
                 or Sign in with:
               </p>
               <div className="row my-3 d-flex justify-content-center">
@@ -81,23 +77,8 @@ class SignIn extends Component {
                 </MDBBtn>
               </div>
             </MDBCardBody>
-            <div className="modal-footer">
-                <div className="modal-signin">
-                  Belum Punya Akun?
-                  <div className="modal-signin-green" onClick={() => this.toggleModal("RegisterModal")}>&nbsp;Daftar Akun
-                    <Modal
-                      className="modal-dialog-centered"
-                      isOpen={this.state.RegisterModal}
-                      toggle={() => this.toggleModal("RegisterModal")}
-                    >
-                      <SignUp/>
-                    </Modal>
-                    </div>
-                </div>
-            </div>
     </MDBContainer>
-    )
-  }
-}
+  );
+};
 
-export default SignIn;
+export default SignUp;

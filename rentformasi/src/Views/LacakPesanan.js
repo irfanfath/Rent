@@ -7,11 +7,11 @@ class LacakPesanan extends Component{
             <div className="section">
                 <div className="section no-padding-top">
                     <div className="wrapper">
-                        <div className="section no-padding-vertical">
+                        {/* <div className="section no-padding-vertical">
                             <div className="wrapper side-paddings">
-                                <h3 className="no-margin w-hidden-small w-hidden-tiny">Lacak Status Pesanan Anda</h3>
+                                <div className="title-subtitle">Lacak Status Pesanan Anda</div>
                             </div>
-                        </div>
+                        </div> */}
                         <ListLacak/>
                     </div>
                 </div>

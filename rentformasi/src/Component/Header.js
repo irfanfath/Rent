@@ -9,7 +9,6 @@ import SignIn from "./Modal/SignIn";
 
 class Header extends Component{
     state = {
-        exampleModal: false,
         loginModal: false
       };
       toggleModal = state => {
@@ -35,7 +34,6 @@ class Header extends Component{
                                 <NavLink to="/barang" className="nav-link w-nav-link">Sewa Barang</NavLink>
                                 <NavLink to="/jasa" className="nav-link w-nav-link">Sewa Jasa</NavLink>
                                 <NavLink to="/bantuan" className="nav-link w-nav-link">Bantuan</NavLink>
-                                {/* <NavLink to="/coba"><i className="material-icons">cart</i></NavLink> */}
                             </nav>
                             <div className="w-commerce-commercecartopenlink cart-button w-inline-block">
                                 <NavLink to="/wish" className="w-inline-block">WishList</NavLink>
@@ -50,14 +48,6 @@ class Header extends Component{
                                 toggle={() => this.toggleModal("loginModal")}
                                 >
                                 <SignIn/>
-                                <div className="modal-footer">
-                                <p className="font-small grey-text d-flex justify-content-end">
-                                    Belum Punya Akun?
-                                    <NavLink to="/proses_transaksi" className="blue-text ml-1" onClick={() => this.toggleModal("loginModal")}>
-                                    Daftar Akun
-                                    </NavLink>
-                                </p>
-                                </div>
                             </Modal>
                         </div>
                     </div>
