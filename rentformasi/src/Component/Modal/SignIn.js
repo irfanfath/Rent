@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { MDBContainer, MDBCardBody, MDBInput, MDBBtn, MDBIcon } from 'mdbreact';
-import ButtonLogin from "../Button/ButtonLogin";
 import { Modal } from "reactstrap";
 import SignUp from "./SIgnUp";
+import ForgotPass from "./ForgotPass";
 
 class SignIn extends Component {
   state = {
-    RegisterModal: false
+    RegisterModal: false,
+    ForgotModal: false
   };
   toggleModal = state => {
     this.setState({
@@ -43,9 +44,16 @@ class SignIn extends Component {
               />
               <p className="font-small blue-text d-flex justify-content-end pb-3">
                 Lupa
-                <a href="#!" className="blue-text ml-1">
-                  Password?
-                </a>
+                <div className="modal-signin-green" onClick={() => this.toggleModal("ForgotModal")}>
+                  &nbsp;Password?
+                  <Modal
+                      className="modal-dialog-centered"
+                      isOpen={this.state.ForgotModal}
+                      toggle={() => this.toggleModal("ForgotModal")}
+                    >
+                      <ForgotPass/>
+                    </Modal>
+                </div>
               </p>
               <div className="text-center mb-3">
                 <button className="button w-button">Sign In</button>

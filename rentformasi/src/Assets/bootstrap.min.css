@@ -6102,7 +6102,7 @@ a.close.disabled {
 }
 
 .modal-backdrop.show {
-    opacity: .5
+    opacity: .80
 }
 
 .modal-header {
