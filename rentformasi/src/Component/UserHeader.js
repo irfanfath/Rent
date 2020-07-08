@@ -1,6 +1,4 @@
 import React from "react";
-
-// reactstrap components
 import { Container, Row, Col } from "reactstrap";
 
 class UserHeader extends React.Component {
