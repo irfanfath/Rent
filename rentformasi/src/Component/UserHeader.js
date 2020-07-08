@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "reactstrap";
+// import UserNavbar from "./UserNavbar";
 
 class UserHeader extends React.Component {
   render() {
@@ -9,6 +10,8 @@ class UserHeader extends React.Component {
           <span className="mask bg-gradient-default opacity-8" />
           <Container className="d-flex align-items-center" fluid>
             <Row>
+            {/* <UserNavbar/> */}
+
               <Col md="10">
                 <h1 className="display-2 text-white">Hello Jesse</h1>
                 <p className="header-title">
