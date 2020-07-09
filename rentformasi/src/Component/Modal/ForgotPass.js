@@ -1,11 +1,12 @@
 import React from "react";
-import { MDBContainer, MDBCardBody, MDBInput } from 'mdbreact';
+import { MDBContainer, MDBCardBody, MDBInput, MDBIcon } from 'mdbreact';
 
-const ForgotPass = () => {
+const ForgotPass = (props) => {
   return (
     <MDBContainer>
             <MDBCardBody className="mx-4">
               <div className="text-login">
+                <div className="close-modal" onClick={props.closeModal}><MDBIcon icon="times-circle"/></div>
                 <h2 className="dark-grey-text mb-5">
                   <strong>Ganti Password</strong>
                 </h2>

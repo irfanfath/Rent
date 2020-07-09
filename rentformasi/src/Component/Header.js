@@ -47,7 +47,8 @@ class Header extends Component{
                                 isOpen={this.state.loginModal}
                                 toggle={() => this.toggleModal("loginModal")}
                                 >
-                                <SignIn/>
+                                <SignIn
+                                 closeModal={() => this.toggleModal("loginModal")}/>
                             </Modal>
                         </div>
                     </div>

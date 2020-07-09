@@ -1,11 +1,12 @@
 import React from "react";
 import { MDBContainer, MDBCardBody, MDBInput, MDBBtn, MDBIcon } from 'mdbreact';
 
-const SignUp = () => {
+const SignUp = (props) => {
   return (
     <MDBContainer>
             <MDBCardBody className="mx-4">
               <div className="text-login">
+                <div className="close-modal" onClick={props.closeModal}><MDBIcon icon="times-circle"/></div>
                 <h2 className="dark-grey-text mb-5">
                   <strong>Sign Up</strong>
                 </h2>
@@ -37,7 +38,7 @@ const SignUp = () => {
                 containerClass="mb-0"
               />
               <MDBInput
-                label="Konfirmasi Password"
+                label="Ulangi Password"
                 icon="lock"
                 group
                 type="password"
