@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import ListBarang from "../Component/ListData/ListBarang";
 import axios from 'axios';
 import Cari from "../Component/Forms/Cari";
 import Sorting from "../Component/Dropdown/Sorting";
+import ListPenginapan from "../Component/ListData/ListPenginapan";
 // import PaginationPage from "../Component/Pagination/PaginationPage";
 
 class Barang extends Component{
@@ -30,37 +30,23 @@ class Barang extends Component{
 
     render(){
         return(
-        <div className="section">
+        <div className="section-produk">
             <Cari/>
-            <div className="wrapper">
-                <div className="shop-header">
-                    <h3 className="no-margin w-hidden-small w-hidden-tiny">Semua Jasa</h3>
-                    <Sorting/>
-                    <div className="shop-header-line">
-                        <div className="shop-header-color green w-hidden-small w-hidden-tiny"></div>
-                    </div>
-                </div>
-
                 <div className="section no-padding-top">
-                    <div className="full-width w-dyn-list">
-                        <div className="boxbarang">
-                            <div className="delivery-info w-richtext">
-                                    <div className="products w-dyn-items">
-                                    {
-                                                this.state.post.map(post => {
-                                                    return <ListBarang key={post.id} 
-                                                    data={post}
-                                                    goDetail={this.handleDetail}
-                                                    />
-                                                })
-                                            }
-                                    </div>
+                    <div className="wrapper">
+                        <div className="shop-header">
+                            <h3 className="no-margin">Semua Jasa</h3>
+                            <Sorting/>
+                            <div className="shop-header-line">
+                                <div className="shop-header-color"></div>
                             </div>
                         </div>
+                        <div className="full-width w-dyn-list">
+                            <ListPenginapan/>
+                        </div>
                     </div>
-                </div>
+                </div>   
                 {/* <PaginationPage/>                                   */}
-            </div>
         </div>
         )
     }

@@ -17,8 +17,17 @@ class WishList extends Component{
         })
     }
 
+    // componentDidMount(){
+    //     this.getPostAPI();
+    // }
+
     componentDidMount(){
         this.getPostAPI();
+        //session kalo belum login
+        const session = localStorage.getItem('session')
+        if (session !== "active"){
+            window.location.href = "#/"
+        }
     }
 
     render(){

@@ -1,20 +1,3 @@
-/*!
-
-=========================================================
-* Argon Dashboard React - v1.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-react
-* Copyright 2019 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/argon-dashboard-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from "react";
 import { Link } from "react-router-dom";
 // reactstrap components
@@ -28,68 +11,59 @@ import {
   Container,
   Media
 } from "reactstrap";
+// import "../Assets/_navbar-dropdown.scss"
 
 class UserNavbar extends React.Component {
   render() {
     return (
-      <>
-        <Navbar className="navbar-top navbar-dark" expand="md" id="navbar-main">
+      <div className="w-commerce-commercecartopenlink cart-button w-inline-block">
+        <Navbar className="navbar-top navbar-dark">
           <Container fluid>
-            <Link
-              className="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block"
-              to="/"
-            >
-              {this.props.brandText}
-            </Link>
-            <Nav className="align-items-center d-none d-md-flex" navbar>
+              <Nav className="align-items-center d-none d-md-flex" navbar>
               <UncontrolledDropdown nav>
                 <DropdownToggle className="pr-0" nav>
                   <Media className="align-items-center">
                     <span className="avatar avatar-sm rounded-circle">
-                      <img
-                        className="rounded-circle"
-                        alt="..."
-                        src={require("../Component/Images/profile.jpg")}
-                      />
+                      <img className="rounded-circle" alt="..." src={require("../Component/Images/profile.jpg")} />
                     </span>
-                    <Media className="ml-2 d-none d-lg-block">
-                      <span className="mb-0 text-sm font-weight-bold">
-                        Jessica Jones
-                      </span>
-                    </Media>
+                      <div className="title-user">
+                        Jessica Jones <div className="fa fa-angle-down prefix" />
+                      </div>
                   </Media>
                 </DropdownToggle>
-                <DropdownMenu className="dropdown-menu-arrow" right>
-                  <DropdownItem className="noti-title" header tag="div">
-                    <h6 className="text-overflow m-0">Welcome!</h6>
+                <DropdownMenu className="arrow_box">
+                  <DropdownItem onClick={this.props.Profile}>
+                  <div className="fa fa-user prefix" />
+                    <span className="user-menu">My profile</span>
+                  </DropdownItem>
+                  <DropdownItem onClick={this.props.Wish}>
+                  <div className="fa fa-clipboard-list prefix" />
+                    <span className="user-menu">Wish List</span>
+                    <div className="w-commerce-commercecartopenlinkcount item-count">0</div>
                   </DropdownItem>
                   <DropdownItem to="/admin/user-profile" tag={Link}>
-                    <i className="ni ni-single-02" />
-                    <span>My profile</span>
+                  <div className="fa fa-cog prefix" />
+                    <span className="user-menu">Settings</span>
                   </DropdownItem>
                   <DropdownItem to="/admin/user-profile" tag={Link}>
-                    <i className="ni ni-settings-gear-65" />
-                    <span>Settings</span>
+                  <div className="fa fa-calendar-alt prefix" />
+                    <span className="user-menu">Activity</span>
                   </DropdownItem>
                   <DropdownItem to="/admin/user-profile" tag={Link}>
-                    <i className="ni ni-calendar-grid-58" />
-                    <span>Activity</span>
-                  </DropdownItem>
-                  <DropdownItem to="/admin/user-profile" tag={Link}>
-                    <i className="ni ni-support-16" />
-                    <span>Support</span>
+                  <div className="fa fa-headset prefix" />
+                    <span className="user-menu">Support</span>
                   </DropdownItem>
                   <DropdownItem divider />
-                  <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
-                    <i className="ni ni-user-run" />
-                    <span>Logout</span>
+                  <DropdownItem onClick={this.props.Logout}>
+                  <div className="fa fa-sign-out-alt prefix" />
+                    <span className="user-menu">Logout</span>
                   </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
             </Nav>
           </Container>
         </Navbar>
-      </>
+      </div>
     );
   }
 }

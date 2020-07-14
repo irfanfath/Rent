@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 
-class SignUp extends Component {
+class Login extends Component {
     state = {
         username: "",
-        password: "",
-        ulangipassword: ""
+        password: ""
     }
 
     render() {
@@ -16,11 +15,7 @@ class SignUp extends Component {
                         <div className="card-body mx-4">
                             <div className="text-login">
                                 <div className="close-modal" onClick={this.props.onClose}><div className="fa fa-times-circle"></div></div>
-                                <h2 className="dark-grey-text mb-5"><strong>Daftar Akun</strong></h2>
-                            </div>
-                            <div className="md-form">
-                                <div className="fa fa-at prefix"></div>
-                                <input type="email" className="form-control" value="" placeholder="Email" onChange={(e) => this.setState({email: e.target.value})}/>
+                                <h2 className="dark-grey-text mb-5"><strong>Sign in</strong></h2>
                             </div>
                             <div className="md-form">
                                 <div className="fa fa-user prefix"></div>
@@ -30,12 +25,12 @@ class SignUp extends Component {
                                 <div className="fa fa-lock prefix"></div>
                                 <input type="password" className="form-control" value="" placeholder="Password" onChange={(e) => this.setState({password: e.target.value})}/>
                             </div>
-                            <div className="md-form">
-                                <div className="fa fa-lock prefix"></div>
-                                <input type="password" className="form-control" value="" placeholder="Ulangi Password" onChange={(e) => this.setState({ulangpassword: e.target.value})}/>
+                            <div className="font-small blue-text d-flex justify-content-end pb-3">
+                                Lupa
+                                <div className="modal-signin-green" onClick={this.props.LupaPass}>&nbsp;Password?</div>
                             </div>
-                            <div className="text-center mb-3"><button className="button w-button" onClick={this.props.pindahPage}>Sign Up</button></div>
-                            <p className="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2">or Sign Up with:</p>
+                            <div className="text-center mb-3"><button className="button w-button" onClick={this.props.pindahPage}>Sign In</button></div>
+                            <p className="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2">or Sign in with:</p>
                             <div className="row my-3 d-flex justify-content-center">
                                 <button className="btn-white btn Ripple-parent mr-md-3 z-depth-1a">
                                     <div className="fab fa-facebook-f blue-text text-center"></div>
@@ -48,6 +43,12 @@ class SignUp extends Component {
                                 </button>
                             </div>
                         </div>
+                        <div className="modal-footer">
+                            <div className="modal-signin">
+                                Belum Punya Akun?
+                                <div className="modal-signin-green" onClick={this.props.daftar}>&nbsp;Daftar Akun</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -56,4 +57,4 @@ class SignUp extends Component {
     }
 };
 
-export default SignUp;
+export default Login;

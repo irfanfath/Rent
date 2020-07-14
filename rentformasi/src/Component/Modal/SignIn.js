@@ -7,13 +7,20 @@ import ForgotPass from "./ForgotPass";
 class SignIn extends Component {
   state = {
     RegisterModal: false,
-    ForgotModal: false
+    ForgotModal: false,
+    username: "",
+    password: "",
   };
   toggleModal = state => {
     this.setState({
       [state]: !this.state[state],
     });
   };
+
+  movePage = () => {
+    localStorage.setItem('session', "active")
+    window.location.href = "/";
+  }
 
   render () {
     return (
@@ -29,11 +36,13 @@ class SignIn extends Component {
                 label="Username"
                 icon="user"
                 type="email"
+                onInput={(e) => this.setState({username: e.target.value})}
               />
               <MDBInput
                 label="Password"
                 icon="lock"
                 type="password"
+                onInput={(e) => this.setState({password: e.target.value})}
               />
               <div className="font-small blue-text d-flex justify-content-end pb-3">Lupa
                 <div className="modal-signin-green" onClick={() => this.toggleModal("ForgotModal")}>&nbsp;Password?
@@ -49,7 +58,7 @@ class SignIn extends Component {
                 </div>
               </div>
               <div className="text-center mb-3">
-                <button className="button w-button">Sign In</button>
+                <button className="button w-button" onClick={this.movePage}>Sign In</button>
               </div>
               <p className="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2">
                 or Sign in with:

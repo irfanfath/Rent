@@ -1,9 +1,11 @@
 import React from "react";
 import { Button } from "reactstrap";
 
-const ButtonLogin = () => {
+const ButtonLogin = (props) => {
   return (
-      <Button outline color="success">Masuk</Button>
+    <div className="w-commerce-commercecartopenlink cart-button w-inline-block">
+      <Button outline color="success" onClick={props.klik}>Masuk</Button>
+    </div>
   );
 }
 

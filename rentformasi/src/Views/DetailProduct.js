@@ -58,11 +58,13 @@ class DetailProduct extends Component{
                                             <input type="date" className="input subscribe-input w-input" placeholder="Tanggal Kembali" id="tanggalkembali" required="" />
                                         </form>
                                     </div>
-                                    <NavLink to="/keranjang"><button className="button detail-button">Sewa Sekarang</button></NavLink>
-                                    <NavLink to="/wish"><button className="button detail-button">Add To Wish List</button></NavLink>
+                                    <div className="margin-button-detail-menu">
+                                        <NavLink to="/keranjang"><button className="button detail-button">Sewa Sekarang</button></NavLink>
+                                        <NavLink to="/wish"><button className="button detail-button">Add To Wish List</button></NavLink>
+                                    </div>
                                 </div>
                                 <div className="product-image-wrapper">
-\                                    <img src="https://www.otomotifer.com/wp-content/uploads/2019/04/Mobil-City-Car-Murah-Honda.jpg" alt=""/>
+                                    <img src="https://www.otomotifer.com/wp-content/uploads/2019/04/Mobil-City-Car-Murah-Honda.jpg" alt=""/>
                                 </div>
                                 <div className="product-details-wrapper">
                                     <div className="shop-header">

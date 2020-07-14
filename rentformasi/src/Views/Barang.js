@@ -33,7 +33,7 @@ class Barang extends Component{
 
     render(){
         return(
-        <div className="section">
+        <div className="section-produk">
             <Cari/>
             <div className="wrapper">
                 <div className="shop-header">

@@ -365,15 +365,8 @@ html.w-mod-touch * {
 }
 
 .detail-button {
-    display: inline-block;
-    padding: 9px 15px;
-    color: white;
     border: 0;
-    width: 40%;
-    line-height: inherit;
     text-decoration: none;
-    cursor: pointer;
-    border-radius: 0;
     margin-left: 5%;
     margin-top: 5%;
 }
@@ -2295,7 +2288,7 @@ textarea.w-select {
     border-top-width: 0px;
     color: #fff;
     cursor: pointer;
-    padding-top: 9px;
+    padding-top: 5px;
     padding-bottom: 9px;
     padding-left: 15px;
     padding-right: 15px;
@@ -4906,6 +4899,25 @@ p {
     text-align: center;
 }
 
+.button-status {
+    padding: 12px 28px;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    border-radius: 24px;
+    background-color: #a5c926;
+    -webkit-transition: box-shadow 300ms ease, -webkit-transform 300ms ease;
+    transition: box-shadow 300ms ease, -webkit-transform 300ms ease;
+    transition: transform 300ms ease, box-shadow 300ms ease;
+    transition: transform 300ms ease, box-shadow 300ms ease, -webkit-transform 300ms ease;
+    color: #fff;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 600;
+    text-align: center;
+}
+
 .button-detail {
     height: 48px;
     padding: 12px 28px;
@@ -5179,11 +5191,6 @@ p {
     -ms-flex-align: center;
     align-items: center;
     text-align: center;
-}
-
-.margin-cari {
-    margin-bottom: 4%;
-    width: 80%;
 }
 
 .intro.no-margin {
@@ -5487,8 +5494,26 @@ p {
 }
 
 .link-white {
+    display: inline-block;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-bottom: 2px solid #ddd;
+    -webkit-transition: border-color 300ms ease;
+    transition: border-color 300ms ease;
     color: #fff;
-    text-decoration: underline;
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.link-white.arrow-link {
+    margin-top: 4px;
+    padding-right: 20px;
+    background-image: url("https://assets.website-files.com/5badda2935e11303a89a461e/5baf79eb570913b9781a96f2_arrow-right-mini-icon.svg");
+    background-position: 100% 50%;
+    background-size: 11px;
+    background-repeat: no-repeat;
 }
 
 .footer-brand {
@@ -5620,7 +5645,7 @@ p {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    width: 100%;
+    width: 90%;
     padding-top: 32px;
     -webkit-box-pack: center;
     -webkit-justify-content: center;
@@ -5673,7 +5698,7 @@ p {
     position: absolute;
     right: 21px;
     bottom: 17px;
-    width: 220px;
+    width: 190px;
 }
 
 .home-category-info-2 {
@@ -5860,6 +5885,7 @@ p {
     background-repeat: no-repeat;
 }
 
+
 .play-button {
     display: -webkit-box;
     display: -webkit-flex;
@@ -5933,7 +5959,6 @@ p {
 }
 
 .subscribe-form {
-    display: flex;
     -webkit-box-pack: center;
     -webkit-justify-content: center;
     -ms-flex-pack: center;
@@ -5973,6 +5998,11 @@ p {
 }
 
 .input.subscribe-input {
+    margin-right: 16px;
+    margin-bottom: 0px;
+}
+
+.input-cari.subscribe-input {
     margin-right: 16px;
     margin-bottom: 0px;
 }
@@ -7408,6 +7438,7 @@ p {
     .input.subscribe-input {
         margin-bottom: 20px;
         text-align: center;
+        margin-top: 20px;
     }
     .input.no-margin-bottom {
         margin-bottom: 0px;
@@ -7618,10 +7649,10 @@ p {
         font-size: 20px;
         line-height: 28px;
     }
-    .section {
+    /* .section {
         padding-top: 64px;
         padding-bottom: 64px;
-    }
+    } */
     .section.hero-section {
         padding-top: 104px;
         padding-bottom: 104px;
@@ -7933,10 +7964,10 @@ p {
         text-align: center;
     }
     .product-card-wrapper {
-        width: 100%;
+        width: 50%;
     }
     .product-card-image-wrapper {
-        height: 76vw;
+        height: 20%;
     }
     .subscribe {
         width: 100%;

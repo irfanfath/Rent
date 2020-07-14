@@ -7,31 +7,20 @@ import ListBestRent from "../Component/ListData/ListBestRent";
 class Home extends Component{
     render(){
         return(
-            <div className="page-wrapper">
-                {/* <div className="section hero-section">
-                    <div className="wrapper text-white">
-                        <div className="hero-intro"> 
-                            <div className="title">
-                                Penuhi Kebutuhan Anda Dengan Biaya Terjangkau
-                            </div>
-                            <h1>100% Aman & Nyaman</h1><NavLink to="/barang" className="button w-button">Lihat Katalog</NavLink>
-                        </div>
-                    </div>
-                </div> */}
-
-                <div id="Scroll-Section" className="section">
+            <div className="margin-home-box">
+                <div className="section-produk">
                     <div className="wrapper">
                         <div className="home-categories">
-                            <div className="home-category-card"><img src="https://cdn.pixabay.com/photo/2019/09/04/11/48/men-4451373_960_720.png" sizes="(max-width: 479px) 100vw, (max-width: 991px) 176px, 220px" alt="" className="home-category-image-1" />
+                            <NavLink to="/barang" className="home-category-card"><img src="https://cdn.pixabay.com/photo/2019/09/04/11/48/men-4451373_960_720.png" sizes="(max-width: 479px) 100vw, (max-width: 991px) 176px, 220px" alt="" className="home-category-image-1" />
                                 <div className="home-category-info-1">
-                                    <h3>Sewa Barang</h3><NavLink to="/barang" className="button small white w-button">Lihat Semua</NavLink>
+                                    <h3>Sewa Barang</h3><div className="link-white arrow-link">Lihat Semua</div>
                                 </div>
-                            </div>
-                            <div className="home-category-card red"><img src="https://www.pngkey.com/png/full/165-1654001_you-can-only-ask-a-co-worker-out.png" sizes="(max-width: 479px) 100vw, (max-width: 991px) 176px, 220px" alt="" className="home-category-image-2" />
+                            </NavLink>
+                            <NavLink to="/jasa" className="home-category-card red"><img src="https://www.pngkey.com/png/full/165-1654001_you-can-only-ask-a-co-worker-out.png" sizes="(max-width: 479px) 100vw, (max-width: 991px) 176px, 220px" alt="" className="home-category-image-2" />
                                 <div className="home-category-info-2">
-                                    <h3>Sewa Jasa</h3><NavLink to="/jasa" className="button small white w-button">Lihat Semua</NavLink>
+                                    <h3>Sewa Jasa</h3><div className="link-white arrow-link">Lihat Semua</div>
                                 </div>
-                            </div>
+                            </NavLink>
                         </div>
                     </div>
                 </div>

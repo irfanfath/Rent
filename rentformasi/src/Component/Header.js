@@ -1,24 +1,64 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
+import { MDBCollapse } from "mdbreact";
 import ButtonLogin from "./Button/ButtonLogin";
-import {
-    Modal
-  } from "reactstrap";
-// import CartValue from "./Modal/CartValue";
-import SignIn from "./Modal/SignIn";
+// import SignIn from "./Modal/SignIn";
+import UserNavbar from "../Component/UserNavbar";
+import Login from "./Modal/Login";
+import ForgotPass from "./Modal/ForgotPass";
+import SignUp from "./Modal/SignUp";
 
 class Header extends Component{
     state = {
-        loginModal: false
+        collapseID: "",
+        showLogin: false,
+        showForgotPass: false,
+        showSignUp: false,
+        // loginModal: false,
+        session : localStorage.getItem("session")
       };
-      toggleModal = state => {
+      toggleCollapse = collapseID => () => {
+        this.setState(prevState => ({
+          collapseID: prevState.collapseID !== collapseID ? collapseID : ""
+        }));
+      }
+    //   toggleModal = state => {
+    //     this.setState({
+    //       [state]: !this.state[state]
+    //     });
+    //   };
+
+      movePage = () => {
+        localStorage.setItem('session', "active");
         this.setState({
-          [state]: !this.state[state]
-        });
-      };
+            showLogin: false
+        })
+      }
+
+      moveGantiPass = () => {
+          this.setState({
+              showForgotPass: false
+          })
+      }
+
+      moveSignUp = () => {
+        this.setState({
+            showSignUp: false
+        })
+    }
 
       moveWish = () => {
           window.location.href = "#/wish"
+      }
+      
+      moveProfile = () => {
+          window.location.href = "#/profile"
+      }
+
+      handleLogout = () => {
+        //   localStorage.removeItem('session')
+          localStorage.clear();
+          window.location.href = "/"
       }
 
     render(){
@@ -26,31 +66,56 @@ class Header extends Component{
             <div data-collapse="medium" data-animation="default" data-duration="400" className="nav-bar w-nav">
                 <div className="nav-main">
                     <div className="wrapper nav-bar-wrapper">
+
                         <NavLink to="/" className="brand w-nav-brand w--current">
                                 Rentformasi
                         </NavLink>
                         <div className="navigation">
                             <nav role="navigation" className="nav-menu w-nav-menu">
-                                <NavLink to="/barang" className="nav-link w-nav-link">Sewa Barang</NavLink>
-                                <NavLink to="/jasa" className="nav-link w-nav-link">Sewa Jasa</NavLink>
+                                <NavLink to="/jasa" className="nav-link w-nav-link">FAQ</NavLink>
                                 <NavLink to="/bantuan" className="nav-link w-nav-link">Bantuan</NavLink>
+                                <NavLink to="/barang" className="nav-link w-nav-link">Daftar Menjadi Vendor</NavLink>
                             </nav>
-                            <div className="w-commerce-commercecartopenlink cart-button w-inline-block">
-                                <NavLink to="/wish" className="w-inline-block">WishList</NavLink>
-                                <img src="https://img.icons8.com/material-outlined/24/000000/wish-list.png" alt="" className="cart-icon" onClick={this.moveWish} />
-                                <div className="w-commerce-commercecartopenlinkcount item-count">0</div>
+                            <div className="menu-button w-nav-button">
+                                <div className="w-icon-nav-menu" onClick={this.toggleCollapse("basicCollapse")}></div>
                             </div>
+    
+                            {/* {
+                                this.state.session === "active"? <UserNavbar /> : <div className="w-commerce-commercecartopenlink cart-button w-inline-block" onClick={() => this.toggleModal("loginModal")}><ButtonLogin/>
+                                                                                    <Modal
+                                                                                        className="modal-dialog-centered"
+                                                                                        isOpen={this.state.loginModal}
+                                                                                        toggle={() => this.toggleModal("loginModal")}
+                                                                                        >
+                                                                                        <SignIn
+                                                                                        closeModal={() => this.toggleModal("loginModal")}/>
+                                                                                    </Modal>
+                                                                                </div>
+                            } */}
+                            {
+                                this.state.session === "active"? <UserNavbar Logout={this.handleLogout} Wish={this.moveWish} Profile={this.moveProfile} /> :  <ButtonLogin klik={()=> this.setState({showLogin: true})} />
+
+                            }
+                            {
+                                this.state.showLogin ? <Login pindahPage={this.movePage} LupaPass={()=> this.setState({showForgotPass: true, showLogin: false})} daftar={()=> this.setState({showSignUp: true, showLogin: false})} onClose={()=> this.setState({showLogin: false})}/> : null
+                            }
+                            {
+                                this.state.showForgotPass ? <ForgotPass pindahPage={this.moveGantiPass} onClose={()=> this.setState({showForgotPass: false})}/> : null
+                            }
+                            {
+                                this.state.showSignUp ? <SignUp pindahPage={this.moveSignUp} onClose={()=> this.setState({showSignUp: false})}/> : null
+                            }
+                            
                         </div>
-                        <div className="w-commerce-commercecartopenlink cart-button w-inline-block" onClick={() => this.toggleModal("loginModal")}><ButtonLogin/>
-                            <Modal
-                                className="modal-dialog-centered"
-                                isOpen={this.state.loginModal}
-                                toggle={() => this.toggleModal("loginModal")}
-                                >
-                                <SignIn
-                                 closeModal={() => this.toggleModal("loginModal")}/>
-                            </Modal>
-                        </div>
+                    </div>
+                    <div className="collapse-header">
+                        <MDBCollapse id="basicCollapse" isOpen={this.state.collapseID}>
+                            <div className="value-header-collapse">
+                                <NavLink className="isi-header-collapse" to="/jasa">FAQ</NavLink>
+                                <NavLink className="isi-header-collapse" to="/bantuan">Bantuan</NavLink>
+                                <NavLink className="isi-header-collapse" to="/jasa">Daftar Menjadi Vendor</NavLink>
+                            </div>                           
+                        </MDBCollapse>
                     </div>
                 </div>
             </div>

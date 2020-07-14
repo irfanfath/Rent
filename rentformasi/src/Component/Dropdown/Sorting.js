@@ -8,8 +8,11 @@ class Sorting extends Component{
             <div className="shop-categories-wrapper">
                 <div className="w-dyn-list">
                     <div className="shop-categories w-dyn-items">
-                        <div className="w-dyn-item"><Urutan/></div>
-                        <div className="w-dyn-item"><Lokasi/></div>
+                        <div className="w-dyn-sorting">
+                            <Urutan/>
+                            <Lokasi/>
+                        </div>
+                        {/* <div className="w-dyn-item"><Lokasi/></div> */}
                     </div>
                 </div>
             </div>

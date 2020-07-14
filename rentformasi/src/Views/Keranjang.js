@@ -6,6 +6,13 @@ import Recipe from '../Component/Recipe/Recipe';
 
 class Keranjang extends Component{
 
+    componentDidMount(){
+        //session kalo belum login
+        const session = localStorage.getItem('session')
+        if (session !== "active"){
+            window.location.href = "#/"
+        }
+    }
     //to remove the item completely
     handleRemove = (id)=>{
         this.props.removeItem(id);
