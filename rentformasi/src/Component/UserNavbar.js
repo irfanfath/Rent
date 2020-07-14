@@ -16,10 +16,10 @@ import {
 class UserNavbar extends React.Component {
   render() {
     return (
-      <div className="w-commerce-commercecartopenlink cart-button w-inline-block">
+      <div className="cart-button w-inline-block">
         <Navbar className="navbar-top navbar-dark">
           <Container fluid>
-              <Nav className="align-items-center d-none d-md-flex" navbar>
+              <Nav className="align-items-center d-md-flex" navbar>
               <UncontrolledDropdown nav>
                 <DropdownToggle className="pr-0" nav>
                   <Media className="align-items-center">

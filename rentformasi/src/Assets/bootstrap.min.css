@@ -3306,7 +3306,7 @@ input[type=submit].btn-block {
 }
 .arrow_box:after, .arrow_box:before {
 	bottom: 100%;
-	left: 80%;
+	left: 50%;
 	border: solid transparent;
 	content: " ";
 	height: 0;

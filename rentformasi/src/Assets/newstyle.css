@@ -415,5 +415,29 @@
         margin-bottom: 8%;
         width: 100%;
     }    
+
+    .title-user {
+        color: #111;
+        font-size: 15px;
+        font-weight: 600;
+        margin-left: 10px;
+        display: none;
+    }
+    
+    .title-user:hover {
+        opacity: 70%;
+        color: #111;
+        font-size: 15px;
+        font-weight: 600;
+        margin-left: 10px;
+    }
+
+    .arrow_box {
+        position: absolute;
+        will-change: transform;
+        top: 0px;
+        left: 0px;
+        transform: translate3d(-71px, 53px, 0px);
+    }
 }
 
