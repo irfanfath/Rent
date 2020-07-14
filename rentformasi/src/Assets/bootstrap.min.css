@@ -1924,6 +1924,10 @@ pre code {
     .table-responsive-lg>.table-bordered {
         border: 0
     }
+    .mt-md-5,
+    .my-md-5 {
+        margin-top: 3rem!important
+    }
 }
 
 @media (max-width:1199.98px) {

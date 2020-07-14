@@ -11,15 +11,16 @@ import {
 } from "reactstrap";
 // core components
 import UserHeader from "../Component/UserHeader";
+import { NavLink } from "react-router-dom";
 
 class UserProfile extends React.Component {
   render() {
     return (
-      <>
+      <div className="section-profile">
         <UserHeader/>
         <Container className="box-profile" fluid>
           <Row>
-            <Col className="order-xl-2">
+            <div className="user-profile-box ">
               <Card className="card-profile shadow">
                 <Row className="justify-content-center">
                     <div className="card-profile-image">
@@ -68,11 +69,14 @@ class UserProfile extends React.Component {
                       Nick Murphy — writes, performs and records all of his own
                       music.
                     </p>
+                    <div className="edit-data-profile">
+                      <NavLink to="/editdata"><button className="button w-button">Edit</button></NavLink>
+                    </div>
                   </div>
                 </CardBody>
               </Card>
-            </Col>
-            <Col xl="8">
+            </div>
+            <div className="edit-user-profile">
               <Card className="bg-secondary shadow">
                 <CardHeader className="bg-white border-0">
                     <Col xs="8">
@@ -157,7 +161,7 @@ class UserProfile extends React.Component {
                       </Row>
                       <Row>
                         <Col lg="6">
-                          <FormGroup>
+                          <FormGroup> 
                             <label
                               className="form-control-label"
                               htmlFor="input-first-name"
@@ -273,10 +277,10 @@ class UserProfile extends React.Component {
                     <button className="button w-button">Simpan Perubahan</button>
                 </CardBody>
               </Card>
-            </Col>
+            </div>
           </Row>
         </Container>
-      </>
+      </div>
     );
   }
 }

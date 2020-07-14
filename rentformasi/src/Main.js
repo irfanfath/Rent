@@ -20,6 +20,7 @@ import Cart from "./Views/Cart";
 import StatusPesanan from "./Views/StatusPesanan";
 import LacakPesanan from "./Views/LacakPesanan";
 import UserProfile from "./Views/UserProfile";
+import EditProfile from "./Views/EditProfile";
 // import Proses_Transaksi from "./Views/Proses_Transaksi";
 // import SelesaiTransaksi from "./Views/SelesaiTransaksi";
 // import Sewaan from "./Views/Sewaan";
@@ -40,6 +41,7 @@ class Main extends Component {
             <Route path="/product_detail/:idBarang" component={DetailProduct}/>
             <Route path="/statuspesanan" component={StatusPesanan}/>
             <Route path="/inputdata" component={InputData}/>
+            <Route path="/editdata" component={EditProfile}/>
             <Route path="/selesai" component={Selesai}/>
             <Route path="/coba" component={Percobaan}/>
             <Route path="/cart/" component={Cart}/>
