@@ -352,7 +352,7 @@
     display: -ms-flexbox;
     display: flex;
     width: 100%;
-    padding: 12px;
+    padding: 5px;
     -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
@@ -411,6 +411,11 @@
 }
 
 @media (max-width: 991px) {
+
+    .dropdown-toggle {
+        margin-right: 5px;
+    }
+
     .margin-cari  {
         margin-bottom: 8%;
         width: 100%;

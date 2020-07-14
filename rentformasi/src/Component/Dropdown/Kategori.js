@@ -5,7 +5,7 @@ export default function Kategori () {
   return (
     <UncontrolledDropdown>
       <DropdownToggle caret>
-        Pilih Kategori
+        Kategori
       </DropdownToggle>
       <DropdownMenu>
         <DropdownItem>Kendaraan</DropdownItem>
