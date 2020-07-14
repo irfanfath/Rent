@@ -7,7 +7,7 @@ class Cari extends Component{
         <div className="margin-cari">
                 <div className="subscribe-cari">
                             <Kategori/>
-                            <input type="text" className="input-cari subscribe-input w-input" placeholder="Masukan Kata Kunci Nama Barang" id="nama_barang1" />
+                            <input type="text" className="input-cari subscribe-input w-input" placeholder="Kata Kunci Pencarian" id="nama_barang1" />
                             <i className="fa fa-search prefix"/> 
                 </div>
         </div>
