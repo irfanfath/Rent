@@ -28,6 +28,10 @@ class Barang extends Component{
         this.props.history.push(`/product_detail/${id}`);
     }
 
+    moveCart = () => {
+        window.location.href = "#/product_detail/1"
+    }
+
     render(){
         return(
         <div className="section-produk">
@@ -45,7 +49,7 @@ class Barang extends Component{
                             </div>
                         </div>
                         <div className="full-width w-dyn-list">
-                            <ListPenginapan/>
+                            <ListPenginapan Move={this.moveCart}/>
                         </div>
                     </div>
                 </div>   

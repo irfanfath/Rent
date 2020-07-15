@@ -1,8 +1,8 @@
 import React from "react";
 
-const ListPenginapan = () => {
+const ListPenginapan = (props) => {
   return (
-    <div className="products w-dyn-items">
+    <div className="products w-dyn-items" onClick={props.Move}>
                         <div className="product-card-wrapper w-dyn-item">
                             <div className="product-card w-inline-block">
                                 <div className="product-card-image-wrapper"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtdpJQhVBnuJJM7kqg84oRgPWOnBUY1GG3tSHuewb_hv4Zxnga&s" alt= ""/></div>

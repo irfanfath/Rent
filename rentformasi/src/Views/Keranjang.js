@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Link, NavLink } from 'react-router-dom'
 import { removeItem,addQuantity,subtractQuantity} from '../Component/Action/CartAction'
-import Recipe from '../Component/Recipe/Recipe';
 
 class Keranjang extends Component{
 
@@ -69,7 +68,6 @@ class Keranjang extends Component{
                             <div className="form-wishlist">
                                 <h4 className="contact-heading">Order List Anda : </h4>
                                 {addedItems}
-                                <Recipe/>
                             </div>
                             <div className="checkout">
                                 <NavLink to="/inputdata" className="nav-link-product w-nav-link">

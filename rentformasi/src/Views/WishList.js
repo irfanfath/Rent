@@ -27,6 +27,12 @@ class WishList extends Component{
                                 <div className="w-commerce-keranjang">
                                     <div className="keranjang-img"> 
                                         <img  src="https://www.otomotifer.com/wp-content/uploads/2019/04/Mobil-City-Car-Murah-Honda.jpg" alt=""/>
+                                        <div className="margin-qty">
+                                        <div className="title-qty">Qty</div>
+                                            <div className="fa fa-minus-circle prefix"></div>
+                                            <input type="text" className="input-qty subscribe-keranjang w-input-qty" placeholder="Qty" id="qty" required="" value="1"/>
+                                            <div className="fa fa-plus-circle prefix"></div>
+                                        </div>
                                     </div>
                                     <div className="side-cart">
                                         <div className="title-keranjang">A successful marketing plan relies heavily on the pulling-power of advertising copy. </div>
@@ -35,10 +41,36 @@ class WishList extends Component{
                                     <div className="w-form-date">
                                         <form className="subscribe-form-date">
                                             <div className="title-date">Tanggal Sewa
-                                                <input type="date" className="input subscribe-keranjang w-input" placeholder="Tanggal Sewa" id="tanggalsewa" required="" />
+                                                <input type="date" className="input-tanggal subscribe-keranjang w-input" placeholder="Tanggal Sewa" id="tanggalsewa1" required="" />
                                             </div>
                                             <div className="title-date">Tanggal Kembali
-                                                <input type="date" className="input subscribe-keranjang w-input" placeholder="Tanggal Kembali" id="tanggalkembali" required="" />
+                                                <input type="date" className="input-tanggal subscribe-keranjang w-input" placeholder="Tanggal Kembali" id="tanggalkembali1" required="" />
+                                            </div>
+                                        </form>
+                                    </div>                                
+                                </div>
+                                <div className="shop-header-line"></div>
+                                <div className="w-commerce-keranjang">
+                                    <div className="keranjang-img"> 
+                                        <img  src="https://www.otomotifer.com/wp-content/uploads/2019/04/Mobil-City-Car-Murah-Honda.jpg" alt=""/>
+                                        <div className="margin-qty">
+                                        <div className="title-qty">Qty</div>
+                                            <div className="fa fa-minus-circle prefix"></div>
+                                            <input type="text" className="input-qty subscribe-keranjang w-input-qty" placeholder="Qty" id="qty" required="" value="1"/>
+                                            <div className="fa fa-plus-circle prefix"></div>
+                                        </div>
+                                    </div>
+                                    <div className="side-cart">
+                                        <div className="title-keranjang">A successful marketing plan relies heavily on the pulling-power of advertising copy. </div>
+                                        <div className="harga-keranjang">Rp. 5000 </div>
+                                    </div>  
+                                    <div className="w-form-date">
+                                        <form className="subscribe-form-date">
+                                            <div className="title-date">Tanggal Sewa
+                                                <input type="date" className="input-tanggal subscribe-keranjang w-input" placeholder="Tanggal Sewa" id="tanggalsewa1" required="" />
+                                            </div>
+                                            <div className="title-date">Tanggal Kembali
+                                                <input type="date" className="input-tanggal subscribe-keranjang w-input" placeholder="Tanggal Kembali" id="tanggalkembali1" required="" />
                                             </div>
                                         </form>
                                     </div>                                
