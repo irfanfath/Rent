@@ -35,7 +35,10 @@ class Barang extends Component{
                 <div className="section no-padding-top">
                     <div className="wrapper">
                         <div className="shop-header">
-                            <h3 className="no-margin">Semua Jasa</h3>
+                            <div>
+                            <h3>Semua Jasa</h3>
+                            <div className="count-produk">Menampilkan 1-23 dari 253 produk</div>
+                            </div>
                             <Sorting/>
                             <div className="shop-header-line">
                                 <div className="shop-header-color"></div>
