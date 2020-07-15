@@ -42,7 +42,7 @@ class DetailProduct extends Component{
                     <div className="wrapper side-paddings">
                         <div className="product">
                             <div className="product-info">
-                                <h2>{this.state.post.title}</h2>
+                                <h2>fhuewhfwueuf</h2>
                                 <div className="rating">
                                     <span role="img" aria-label="star">&#11088;</span>
                                     <span role="img" aria-label="star">&#11088;</span>
@@ -50,17 +50,17 @@ class DetailProduct extends Component{
                                     <span role="img" aria-label="star">&#11088;</span>
                                 </div>
                                 <p className="text-grey">25 Ulasan&nbsp;&nbsp;&nbsp;&nbsp;500 transaksi&nbsp;&nbsp;&nbsp;&nbsp;5 Pertanyaan</p>
-                                <div className="product-price">Rp. {this.state.post.harga}</div>
-                                    <div className="w-form">
+                                <div className="product-price">Rp. 5000</div>
+                                    {/* <div className="w-form">
                                         <label className="label">Tanggal Sewa</label>
                                         <form className="subscribe-form">
                                             <input type="date" className="input subscribe-input w-input" placeholder="Tanggal Sewa" id="tanggalsewa" required="" />
                                             <input type="date" className="input subscribe-input w-input" placeholder="Tanggal Kembali" id="tanggalkembali" required="" />
                                         </form>
-                                    </div>
+                                    </div> */}
                                     <div className="margin-button-detail-menu">
-                                        <NavLink to="/keranjang"><button className="button detail-button">Sewa Sekarang</button></NavLink>
-                                        <NavLink to="/wish"><button className="button detail-button">Add To Wish List</button></NavLink>
+                                        <NavLink to="/keranjang"><button className="button-full w-full">Sewa Sekarang</button></NavLink>
+                                        <NavLink to="/wish"><button className="button-white w-full-white">Add To Wish List</button></NavLink>
                                     </div>
                                 </div>
                                 <div className="product-image-wrapper">
@@ -69,8 +69,8 @@ class DetailProduct extends Component{
                                 <div className="product-details-wrapper">
                                     <div className="shop-header">
                                         <h5 className="no-margin">Detail Produk</h5>
-                                        <h5 className="no-margin">Ulasan</h5>
-                                        <h5 className="no-margin">Pertanyaan</h5>
+                                        {/* <h5 className="no-margin">Ulasan</h5>
+                                        <h5 className="no-margin">Pertanyaan</h5> */}
                                         <div className="sku">
                                             <div>ID Barang :</div>
                                             <div>35009</div>

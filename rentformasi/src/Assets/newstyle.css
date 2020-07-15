@@ -44,7 +44,6 @@
 }
 
 .button-full {
-    height: 48px;
     padding: 12px 28px;
     -webkit-box-pack: center;
     -webkit-justify-content: center;
@@ -62,6 +61,24 @@
     text-align: center;
 }
 
+.button-white {
+    padding: 12px 28px;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    border-radius: 24px solid;
+    background-color: #fff;
+    -webkit-transition: box-shadow 300ms ease, -webkit-transform 300ms ease;
+    transition: box-shadow 300ms ease, -webkit-transform 300ms ease;
+    transition: transform 300ms ease, box-shadow 300ms ease;
+    transition: transform 300ms ease, box-shadow 300ms ease, -webkit-transform 300ms ease;
+    margin-left: 5%;
+    line-height: 24px;
+    font-weight: 600;
+    text-align: center;
+}
+
 .w-full {
     display: inline-block;
     width: 100%;
@@ -69,6 +86,20 @@
     padding: 9px 15px;
     color: white;
     border: 0;
+    line-height: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 2px solid #a5c926
+}
+
+.w-full-white {
+    display: inline-block;
+    width: 100%;
+    font-size: 20px;
+    padding: 9px 15px;
+    color: #a5c926;
+    border: 2px solid #a5c926;
     line-height: inherit;
     text-decoration: none;
     cursor: pointer;
@@ -348,7 +379,7 @@
 }
 
 .margin-button-detail-menu {
-    display: inline;
+    display: inline-flex;
 }
 
 .margin-home-box {
@@ -474,6 +505,32 @@
 }
 
 @media (max-width: 991px) {
+    .w-full {
+        display: inline-block;
+        width: 100%;
+        font-size: 13px;
+        padding: 9px 15px;
+        color: white;
+        border: 0;
+        line-height: inherit;
+        text-decoration: none;
+        cursor: pointer;
+        border-radius: 10px;
+        border: 2px solid #a5c926
+    }
+    
+    .w-full-white {
+        display: inline-block;
+        width: 100%;
+        font-size: 13px;
+        padding: 9px 15px;
+        color: #a5c926;
+        border: 2px solid #a5c926;
+        line-height: inherit;
+        text-decoration: none;
+        cursor: pointer;
+        border-radius: 10px
+    }
 
     .dropdown-toggle {
         margin-right: 5px;
