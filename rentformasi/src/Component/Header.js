@@ -72,9 +72,9 @@ class Header extends Component{
                         </NavLink>
                         <div className="navigation">
                             <nav role="navigation" className="nav-menu w-nav-menu">
-                                <NavLink to="/jasa" className="nav-link w-nav-link">FAQ</NavLink>
+                                <NavLink to="/" className="nav-link w-nav-link">FAQ</NavLink>
                                 <NavLink to="/bantuan" className="nav-link w-nav-link">Bantuan</NavLink>
-                                <NavLink to="/barang" className="nav-link w-nav-link">Daftar Menjadi Vendor</NavLink>
+                                <NavLink to="/" className="nav-link w-nav-link">Daftar Menjadi Vendor</NavLink>
                             </nav>
                             <div className="menu-button w-nav-button">
                                 <div className="w-icon-nav-menu" onClick={this.toggleCollapse("basicCollapse")}></div>
