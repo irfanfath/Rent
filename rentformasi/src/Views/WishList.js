@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from "axios";
 import Recipe from '../Component/Recipe/Recipe';
-import ListWish from '../Component/ListData/ListWish';
 
 class WishList extends Component{
     state = {
@@ -32,21 +31,26 @@ class WishList extends Component{
 
     render(){
        return(
-            <div className="section">
+            <div className="page-wrapper">
+                <div className="section no-padding-vertical">
+                    <div className="wrapper side-paddings">
+                        <div className="breadcrumbs"><div className="link-grey">Home</div><img src="https://assets.website-files.com/5badda2935e11303a89a461e/5baf79eb570913b9781a96f2_arrow-right-mini-icon.svg" alt="" className="breadcrumbs-arrow" />
+                            <div>Konfirmasi pesanan</div>
+                        </div>
+                    </div>
+                </div>
                 <div className="section no-padding-top">
-                    <div className="wrapper">
-                        <div className="contacts">
-                            <div className="form-wishlist">
-                                <h4 className="contact-heading">Keranjang Anda : </h4>
+                    <div className="wrapper side-paddings">
+                        <div className="keranjang">
+                            <h4 className="contact-heading">Keranjang Anda : </h4>
                                 <div className="w-commerce-keranjang">
                                     <div className="keranjang-img"> 
-                                        <img src="https://www.otomotifer.com/wp-content/uploads/2019/04/Mobil-City-Car-Murah-Honda.jpg" alt=""/>
+                                        <img  src="https://www.otomotifer.com/wp-content/uploads/2019/04/Mobil-City-Car-Murah-Honda.jpg" alt=""/>
                                     </div>
-                                    <div className="w-commerce-produk">
-                                        <div className="title-keranjang">eughuehfwhiwfefwewfewfw</div>
-                                        <div className="harga-keranjang">Harga : Rp. 5000</div> 
-                                        {/* <button className="cart-remove-link">Hapus Dari Daftar</button> */}
-                                    </div>    
+                                    <div className="side-cart">
+                                        <div className="title-keranjang">A successful marketing plan relies heavily on the pulling-power of advertising copy. </div>
+                                        <div className="harga-keranjang">Rp. 5000 </div>
+                                    </div>  
                                     <div className="w-form-date">
                                         <form className="subscribe-form-date">
                                             <div className="title-date">Tanggal Sewa
@@ -58,9 +62,7 @@ class WishList extends Component{
                                         </form>
                                     </div>                                
                                 </div>
-                                <Recipe/>
-                            </div>
-                            <button className="button-full w-half">Bayar Sekarang</button>
+                                <Recipe/>      
                         </div>
                     </div>
                 </div>

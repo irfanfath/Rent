@@ -93,21 +93,6 @@
     border: 2px solid #a5c926
 }
 
-.w-half {
-    display: inline-block;
-    width: 20%;
-    margin-left: 80%;
-    font-size: 20px;
-    padding: 9px 15px;
-    color: white;
-    border: 0;
-    line-height: inherit;
-    text-decoration: none;
-    cursor: pointer;
-    border-radius: 10px;
-    border: 2px solid #a5c926
-}
-
 .w-full-white {
     display: inline-block;
     width: 100%;
@@ -395,6 +380,12 @@
 
 .margin-button-detail-menu {
     display: inline-flex;
+}
+
+.margin-button-keranjang {
+    display: inline-flex;
+    width: 40%;
+    margin-top: 3%;
 }
 
 .margin-home-box {

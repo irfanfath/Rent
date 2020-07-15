@@ -11,7 +11,12 @@ class Recipe extends Component{
                                     <div className="w-commerce-commercecartordervalue">: ${this.props.total}</div>
                                 </div>
                             </div> 
+                            <div className="margin-button-keranjang">
+                                <button className="button-full w-full">Sewa Sekarang</button>
+                                <button className="button-white w-full-white">Add To Wish List</button>
+                            </div>
                     </div>
+                    
 
                  
         )
