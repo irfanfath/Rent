@@ -4,10 +4,6 @@ import ListRelated from "../Component/ListData/ListRelated";
 import Login from "../Component/Modal/Login";
 import ForgotPass from "../Component/Modal/ForgotPass";
 import SignUp from "../Component/Modal/SignUp";
-// import {MDBIcon} from "mdbreact";
-// import ModalsCart from "../Component/Modals/ModalsCart";
-// import DatePick from "../Component/Forms/DatePick";
-// import PageProfile from "../Component/Card/PageProfile";
 
 class DetailProduct extends Component{
     state = {
@@ -64,12 +60,7 @@ class DetailProduct extends Component{
       })
   }
 
-    // handleClick = (id)=>{
-    //     this.props.addToCart(id); 
-    // }
-
     render(){
-        // var item = this.props.items
         return(
             <div className="page-wrapper">   
                 <div className="section no-padding-vertical">
@@ -85,13 +76,6 @@ class DetailProduct extends Component{
                                 </div>
                                 <p className="text-grey">25 Ulasan&nbsp;&nbsp;&nbsp;&nbsp;500 transaksi&nbsp;&nbsp;&nbsp;&nbsp;5 Pertanyaan</p>
                                 <div className="product-price">Rp. 5000</div>
-                                    {/* <div className="w-form">
-                                        <label className="label">Tanggal Sewa</label>
-                                        <form className="subscribe-form">
-                                            <input type="date" className="input subscribe-input w-input" placeholder="Tanggal Sewa" id="tanggalsewa" required="" />
-                                            <input type="date" className="input subscribe-input w-input" placeholder="Tanggal Kembali" id="tanggalkembali" required="" />
-                                        </form>
-                                    </div> */}
                                     <div className="margin-button-detail-menu">
                                         <div><button className="button-full w-full" onClick={this.handleCekLogin}>Sewa Sekarang</button></div>
                                         {
@@ -168,7 +152,6 @@ class DetailProduct extends Component{
                                             </div>
                                         </div>
                                     </div>
-                                        {/* <PageProfile/> */}
                                 </div>
                             </div>
                     </div>
