@@ -65,7 +65,6 @@ class Keranjang extends Component{
                                     <div className="side-cart">
                                         <div className="title-keranjang">A successful marketing plan relies heavily on the pulling-power of advertising copy. </div>
                                         <div className="harga-keranjang">Rp. {this.state.price} </div>
-                                        <button className="button w-button" onClick={this.handleCount}>12312</button>
                                     </div>  
                                     <div className="w-form-date">
                                         <form className="subscribe-form-date">
