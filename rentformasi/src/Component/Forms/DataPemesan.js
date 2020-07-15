@@ -9,8 +9,7 @@ class DataPemesan extends Component{
                     <div className="wrapper side-paddings">
                         <div className="contacts">
                             <div className="contact-form-wrapper">
-                                <h4 className="contact-heading">Silahkan Lengkapi Data Pemesanan</h4>
-                                <div className="w-form">
+                                <h4 className="contact-heading">Silahkan Lengkapi Data</h4>
                                     <form id="email-form" name="email-form" data-name="Email Form">
                                         <label className="label">Nama Pemesanan</label>
                                         <input type="text" className="input w-input" name="Contact-Name" data-name="Contact Name" placeholder="Enter your name" id="Contact-Name" />
@@ -22,7 +21,6 @@ class DataPemesan extends Component{
                                             <ButtonSewa/>
                                         </NavLink>
                                     </form>
-                                </div>
                             </div>
                             <div className="contact-info">
                                 <h4 className="contact-heading">Contact Info</h4>

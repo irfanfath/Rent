@@ -70,7 +70,7 @@ class UserProfile extends React.Component {
                       music.
                     </p>
                     <div className="edit-data-profile">
-                      <NavLink to="/editdata"><button className="button w-button">Edit</button></NavLink>
+                      <NavLink to="/editdata"><button className="button-full w-full">Edit Data</button></NavLink>
                     </div>
                   </div>
                 </CardBody>
@@ -274,7 +274,7 @@ class UserProfile extends React.Component {
                         </Col>
                       </Row>
                     </div>
-                    <button className="button w-button">Simpan Perubahan</button>
+                    <button className="button-full w-full">Simpan Perubahan</button>
                 </CardBody>
               </Card>
             </div>

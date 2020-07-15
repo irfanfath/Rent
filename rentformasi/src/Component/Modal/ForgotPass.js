@@ -38,7 +38,7 @@ class ForgotPass extends Component {
                                 type="number"
                                 onInput={(e) => this.setState({nomortelepon: e.target.value})}
                             />
-                            <div className="text-center mb-3"><button className="button w-button" onClick={this.props.pindahPage}>Konfirmasi</button></div>
+                            <div className="text-center mb-3"><button className="button-full w-full" onClick={this.props.pindahPage}>Konfirmasi</button></div>
                         </div>
                     </div>
                 </div>

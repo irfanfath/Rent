@@ -60,7 +60,7 @@ class SignUp extends Component {
                                 type="password"
                                 onInput={(e) => this.setState({ulangipassword: e.target.value})}
                             />
-                            <div className="text-center mb-3"><button className="button w-button" onClick={this.props.pindahPage}>Sign Up</button></div>
+                            <div className="text-center mb-3"><button className="button-full w-full" onClick={this.props.pindahPage}>Sign Up</button></div>
                             <p className="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2">or Sign Up with:</p>
                             <div className="row my-3 d-flex justify-content-center">
                                 <button className="btn-white btn Ripple-parent mr-md-3 z-depth-1a">
