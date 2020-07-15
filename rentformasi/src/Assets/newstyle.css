@@ -552,6 +552,21 @@
     font-size: 15px;
     margin-bottom: 10px;
 }
+.title-hapus {
+    color: red;
+    cursor: pointer;
+    margin-left: 20px;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+.title-hapus:hover {
+    color: red;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-left: 20px;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
 
 @media (max-width: 991px) {
     .input-tanggal {

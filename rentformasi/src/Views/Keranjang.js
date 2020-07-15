@@ -60,6 +60,7 @@ class Keranjang extends Component{
                                             <div className="fa fa-minus-circle prefix" onClick={this.handleDecrement}></div>
                                             <input type="text" className="input-qty subscribe-keranjang w-input-qty" placeholder="Qty" id="qty" required="" value={this.state.qty} readOnly/>
                                             <div className="fa fa-plus-circle prefix" onClick={this.handleIncerement}></div>
+                                            <div className="title-hapus">Hapus</div>
                                         </div>
                                     </div>
                                     <div className="side-cart">
