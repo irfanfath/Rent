@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { NavLink } from 'react-router-dom'
 
 class Recipe extends Component{
     render(){
@@ -12,8 +13,8 @@ class Recipe extends Component{
                                 </div>
                             </div> 
                             <div className="margin-button-keranjang">
-                                <button className="button-full w-full">Sewa Sekarang</button>
-                                <button className="button-white w-full-white">Add To Wish List</button>
+                                <NavLink to="/inputdata"><button className="button-full w-full">Bayar Sekarang</button></NavLink>
+                                <NavLink to="/"><button className="button-white w-full-white">Sewa Lagi</button></NavLink>
                             </div>
                     </div>
                     
