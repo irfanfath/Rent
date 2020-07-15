@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
-import { Link, NavLink } from 'react-router-dom'
-import { removeItem,addQuantity,subtractQuantity} from '../Component/Action/CartAction'
+import { NavLink } from 'react-router-dom';
+import Login from '../Component/Modal/Login';
 
 class Keranjang extends Component{
-
+    state = {
+        showLogin : false
+    }
     componentDidMount(){
         //session kalo belum login
         const session = localStorage.getItem('session')
@@ -12,68 +13,88 @@ class Keranjang extends Component{
             window.location.href = "#/"
         }
     }
-    //to remove the item completely
-    handleRemove = (id)=>{
-        this.props.removeItem(id);
-    }
-    //to add the quantity
-    handleAddQuantity = (id)=>{
-        this.props.addQuantity(id);
-    }
-    //to substruct from the quantity
-    handleSubtractQuantity = (id)=>{
-        this.props.subtractQuantity(id);
-    }
-    render(){
-        let addedItems = this.props.items.length ?
-            (  
-                this.props.items.map(item=>{
-                    return(         
-                                <div className="w-commerce-commercecartitem" key={item.id}>
-                                    <div className="item-img"> 
-                                        <img src={item.img} alt={item.img} className=""/>
-                                    </div>
-                                
-                                    <div className="w-commerce-commercecartiteminfo">
-                                        <p className="title">{item.title}</p>
-                                        <p>{item.desc}</p>
-                                        <p><b className="label">Harga : Rp. {item.price}</b></p> 
-                                        <p><b className="label">Quantity : {item.quantity}</b>
-                                        <Link to="/keranjang"><i className="material-icons" onClick={()=>{this.handleAddQuantity(item.id)}}>+</i></Link>
-                                        <Link to="/keranjang"><i className="material-icons" onClick={()=>{this.handleSubtractQuantity(item.id)}}>-</i></Link>
-                                        </p>
-                                        {/* <div className="add-remove">
-                                            <Link to="/cart"><i className="material-icons" onClick={()=>{this.handleAddQuantity(item.id)}}>+</i></Link>
-                                            <Link to="/cart"><i className="material-icons" onClick={()=>{this.handleSubtractQuantity(item.id)}}>-</i></Link>
-                                        </div> */}
-                                        <p><label className="label">Tanggal Sewa : </label>
-                                            26/12/2019 - 28/12/2019
-                                        </p>
-                                        <button className="cart-remove-link" onClick={()=>{this.handleRemove(item.id)}}>Hapus Dari Daftar</button>
-                                    </div>                                    
-                                </div>
-                         
-                    )
-                })
-            ):
 
-             (
-                <div className="title-wishlist">Anda Belum Menambahkan Barang</div>
-             )
+    render(){
        return(
-            <div className="section">
+            <div className="page-wrapper">
+                <div className="section no-padding-vertical">
+                    <div className="wrapper side-paddings">
+                        <div className="breadcrumbs"><div className="link-grey">Home</div><img src="https://assets.website-files.com/5badda2935e11303a89a461e/5baf79eb570913b9781a96f2_arrow-right-mini-icon.svg" alt="" className="breadcrumbs-arrow" />
+                            <div>Konfirmasi pesanan</div>
+                        </div>
+                    </div>
+                </div>
                 <div className="section no-padding-top">
-                    <div className="wrapper">
-                        <div className="contacts">
-                            <div className="form-wishlist">
-                                <h4 className="contact-heading">Order List Anda : </h4>
-                                {addedItems}
-                            </div>
-                            <div className="checkout">
-                                <NavLink to="/inputdata" className="nav-link-product w-nav-link">
-                                    <input type="submit" value="Bayar Sekarang" className="w-commerce-commerceaddtocartbutton button" />
-                                </NavLink>
-                            </div>
+                    <div className="wrapper side-paddings">
+                        <div className="keranjang">
+                            <h4 className="contact-heading">Keranjang Anda : </h4>
+                                <div className="w-commerce-keranjang">
+                                    <div className="keranjang-img"> 
+                                        <img  src="https://www.otomotifer.com/wp-content/uploads/2019/04/Mobil-City-Car-Murah-Honda.jpg" alt=""/>
+                                        <div className="margin-qty">
+                                        <div className="title-qty">Qty</div>
+                                            <div className="fa fa-minus-circle prefix"></div>
+                                            <input type="text" className="input-qty subscribe-keranjang w-input-qty" placeholder="Qty" id="qty" required="" defaultValue="1"/>
+                                            <div className="fa fa-plus-circle prefix"></div>
+                                        </div>
+                                    </div>
+                                    <div className="side-cart">
+                                        <div className="title-keranjang">A successful marketing plan relies heavily on the pulling-power of advertising copy. </div>
+                                        <div className="harga-keranjang">Rp. 5000 </div>
+                                    </div>  
+                                    <div className="w-form-date">
+                                        <form className="subscribe-form-date">
+                                            <div className="title-date">Tanggal Sewa
+                                                <input type="date" className="input-tanggal subscribe-keranjang w-input" placeholder="Tanggal Sewa" id="tanggalsewa1" required="" />
+                                            </div>
+                                            <div className="title-date">Tanggal Kembali
+                                                <input type="date" className="input-tanggal subscribe-keranjang w-input" placeholder="Tanggal Kembali" id="tanggalkembali1" required="" />
+                                            </div>
+                                        </form>
+                                    </div>                                
+                                </div>
+                                <div className="shop-header-line"></div>
+                                <div className="w-commerce-keranjang">
+                                    <div className="keranjang-img"> 
+                                        <img  src="https://www.otomotifer.com/wp-content/uploads/2019/04/Mobil-City-Car-Murah-Honda.jpg" alt=""/>
+                                        <div className="margin-qty">
+                                        <div className="title-qty">Qty</div>
+                                            <div className="fa fa-minus-circle prefix"></div>
+                                            <input type="text" className="input-qty subscribe-keranjang w-input-qty" placeholder="Qty" id="qty2" required="" defaultValue="1"/>
+                                            <div className="fa fa-plus-circle prefix"></div>
+                                        </div>
+                                    </div>
+                                    <div className="side-cart">
+                                        <div className="title-keranjang">A successful marketing plan relies heavily on the pulling-power of advertising copy. </div>
+                                        <div className="harga-keranjang">Rp. 5000 </div>
+                                    </div>  
+                                    <div className="w-form-date">
+                                        <form className="subscribe-form-date">
+                                            <div className="title-date">Tanggal Sewa
+                                                <input type="date" className="input-tanggal subscribe-keranjang w-input" placeholder="Tanggal Sewa" id="tanggalsewa2" required="" />
+                                            </div>
+                                            <div className="title-date">Tanggal Kembali
+                                                <input type="date" className="input-tanggal subscribe-keranjang w-input" placeholder="Tanggal Kembali" id="tanggalkembali2" required="" />
+                                            </div>
+                                        </form>
+                                    </div>                                
+                                </div>
+                                <div className="w-commerce-commercecartlist cart-list"> 
+                                    <div className="w-commerce-commercecartfooter cart-footer">
+                                        <div className="w-commerce-commercecartlineitem">
+                                            <div>Subtotal</div>
+                                            <div className="w-commerce-commercecartordervalue">Rp. 5000</div>
+                                        </div>
+                                    </div> 
+                                    <div className="margin-button-keranjang">
+                                        <NavLink to="/inputdata"><button className="button-full w-full">Bayar Sekarang</button></NavLink>
+                                        <NavLink to="/"><button className="button-white w-full-white">Sewa Lagi</button></NavLink>
+                                    </div>
+                                    
+                                </div>    
+                                {
+                                    this.state.showLogin ? <Login pindahPage={this.movePage} LupaPass={()=> this.setState({showForgotPass: true, showLogin: false})} daftar={()=> this.setState({showSignUp: true, showLogin: false})} onClose={()=> this.setState({showLogin: false})}/> : null
+                                } 
                         </div>
                     </div>
                 </div>
@@ -82,17 +103,4 @@ class Keranjang extends Component{
     }
 }
 
-
-const mapStateToProps = (state)=>{
-    return{
-        items: state.addedItems,
-    }
-}
-const mapDispatchToProps = (dispatch)=>{
-    return{
-        removeItem: (id)=>{dispatch(removeItem(id))},
-        addQuantity: (id)=>{dispatch(addQuantity(id))},
-        subtractQuantity: (id)=>{dispatch(subtractQuantity(id))}
-    }
-}
-export default connect(mapStateToProps,mapDispatchToProps)(Keranjang)
+export default Keranjang;

@@ -30,7 +30,7 @@ class WishList extends Component{
                                         <div className="margin-qty">
                                         <div className="title-qty">Qty</div>
                                             <div className="fa fa-minus-circle prefix"></div>
-                                            <input type="text" className="input-qty subscribe-keranjang w-input-qty" placeholder="Qty" id="qty" required="" value="1"/>
+                                            <input type="text" className="input-qty subscribe-keranjang w-input-qty" placeholder="Qty" id="qty" required="" defaultValue="1"/>
                                             <div className="fa fa-plus-circle prefix"></div>
                                         </div>
                                     </div>
@@ -41,10 +41,10 @@ class WishList extends Component{
                                     <div className="w-form-date">
                                         <form className="subscribe-form-date">
                                             <div className="title-date">Tanggal Sewa
-                                                <input type="date" className="input-tanggal subscribe-keranjang w-input" placeholder="Tanggal Sewa" id="tanggalsewa1" required="" />
+                                                <input type="date" className="input-tanggal subscribe-keranjang w-input" placeholder="Tanggal Sewa" id="tanggalsewa" required="" />
                                             </div>
                                             <div className="title-date">Tanggal Kembali
-                                                <input type="date" className="input-tanggal subscribe-keranjang w-input" placeholder="Tanggal Kembali" id="tanggalkembali1" required="" />
+                                                <input type="date" className="input-tanggal subscribe-keranjang w-input" placeholder="Tanggal Kembali" id="tanggalkembali" required="" />
                                             </div>
                                         </form>
                                     </div>                                
@@ -56,7 +56,7 @@ class WishList extends Component{
                                         <div className="margin-qty">
                                         <div className="title-qty">Qty</div>
                                             <div className="fa fa-minus-circle prefix"></div>
-                                            <input type="text" className="input-qty subscribe-keranjang w-input-qty" placeholder="Qty" id="qty" required="" value="1"/>
+                                            <input type="text" className="input-qty subscribe-keranjang w-input-qty" placeholder="Qty" id="qty1" required="" defaultValue="1"/>
                                             <div className="fa fa-plus-circle prefix"></div>
                                         </div>
                                     </div>

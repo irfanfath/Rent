@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
-import { connect } from 'react-redux'
-import { addToCart } from '../Component/Action/CartAction'
 import axios from "axios"
 import ListRelated from "../Component/ListData/ListRelated";
+import Login from "../Component/Modal/Login";
+import ForgotPass from "../Component/Modal/ForgotPass";
+import SignUp from "../Component/Modal/SignUp";
 // import {MDBIcon} from "mdbreact";
 // import ModalsCart from "../Component/Modals/ModalsCart";
 // import DatePick from "../Component/Forms/DatePick";
@@ -11,6 +11,9 @@ import ListRelated from "../Component/ListData/ListRelated";
 
 class DetailProduct extends Component{
     state = {
+        showLogin: false,
+        showForgotPass: false,
+        showSignUp: false,
         post: {
             title: '',
             body: ''
@@ -29,6 +32,37 @@ class DetailProduct extends Component{
             })
         })     
     }
+
+    handleCekLogin = () => {
+        const session = localStorage.getItem('session')
+        if (session !== "active"){
+            this.setState({
+                showLogin: true
+            })
+        } else (
+            window.location.href = "#/keranjang"
+        )
+    }
+
+      movePage = () => {
+        localStorage.setItem('session', "active");
+        window.location.href = "#/keranjang";
+        this.setState({
+            showLogin: false
+        })
+      }
+
+      moveGantiPass = () => {
+        this.setState({
+            showForgotPass: false
+        })
+    }
+
+    moveSignUp = () => {
+      this.setState({
+          showSignUp: false
+      })
+  }
 
     // handleClick = (id)=>{
     //     this.props.addToCart(id); 
@@ -59,8 +93,17 @@ class DetailProduct extends Component{
                                         </form>
                                     </div> */}
                                     <div className="margin-button-detail-menu">
-                                        <NavLink to="/keranjang"><button className="button-full w-full">Sewa Sekarang</button></NavLink>
-                                        <NavLink to="/wish"><button className="button-white w-full-white">Add To Wish List</button></NavLink>
+                                        <div><button className="button-full w-full" onClick={this.handleCekLogin}>Sewa Sekarang</button></div>
+                                        {
+                                            this.state.showLogin ? <Login pindahPage={this.movePage} LupaPass={()=> this.setState({showForgotPass: true, showLogin: false})} daftar={()=> this.setState({showSignUp: true, showLogin: false})} onClose={()=> this.setState({showLogin: false})}/> : null
+                                        } 
+                                        {
+                                            this.state.showForgotPass ? <ForgotPass pindahPage={this.moveGantiPass} onClose={()=> this.setState({showForgotPass: false})}/> : null
+                                        }
+                                        {
+                                            this.state.showSignUp ? <SignUp pindahPage={this.moveSignUp} onClose={()=> this.setState({showSignUp: false})}/> : null
+                                        }
+                                        <div><button className="button-white w-full-white">Add To Wish List</button></div>
                                     </div>
                                 </div>
                                 <div className="product-image-wrapper">
@@ -136,16 +179,4 @@ class DetailProduct extends Component{
     }
 }
 
-const mapStateToProps = (state)=>{
-    return {
-      items: state.items
-    }
-  }
-const mapDispatchToProps= (dispatch)=>{
-    
-    return{
-        addToCart: (id)=>{dispatch(addToCart(id))}
-    }
-}
-
-export default connect(mapStateToProps,mapDispatchToProps)(DetailProduct);
+export default DetailProduct;
