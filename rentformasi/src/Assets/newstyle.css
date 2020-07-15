@@ -93,6 +93,21 @@
     border: 2px solid #a5c926
 }
 
+.w-half {
+    display: inline-block;
+    width: 20%;
+    margin-left: 80%;
+    font-size: 20px;
+    padding: 9px 15px;
+    color: white;
+    border: 0;
+    line-height: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 2px solid #a5c926
+}
+
 .w-full-white {
     display: inline-block;
     width: 100%;
@@ -503,6 +518,11 @@
 .section-profile {
     margin-bottom: 5%;
 }
+.title-date {
+    color: #000000;
+    text-align: center;
+    margin-left: 20px;
+}
 
 @media (max-width: 991px) {
     .w-full {
@@ -532,6 +552,12 @@
         border-radius: 10px
     }
 
+    .w-commerce-keranjang {
+        display: grid;
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
     .dropdown-toggle {
         margin-right: 5px;
     }
@@ -548,7 +574,6 @@
         margin-left: 10px;
         display: none;
     }
-    
     .title-user:hover {
         opacity: 70%;
         color: #111;
