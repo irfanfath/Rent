@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { MDBInput } from 'mdbreact';
 
 class Login extends Component {
     state = {
@@ -17,19 +18,23 @@ class Login extends Component {
                                 <div className="close-modal" onClick={this.props.onClose}><div className="fa fa-times-circle"></div></div>
                                 <h2 className="dark-grey-text mb-5"><strong>Sign in</strong></h2>
                             </div>
-                            <div className="md-form">
-                                <div className="fa fa-user prefix"></div>
-                                <input type="email" className="form-control" value="" placeholder="Username" onChange={(e) => this.setState({username: e.target.value})}/>
-                            </div>
-                            <div className="md-form">
-                                <div className="fa fa-lock prefix"></div>
-                                <input type="password" className="form-control" value="" placeholder="Password" onChange={(e) => this.setState({password: e.target.value})}/>
-                            </div>
+                            <MDBInput
+                                label="Username"
+                                icon="user"
+                                type="email"
+                                onInput={(e) => this.setState({username: e.target.value})}
+                            />
+                            <MDBInput
+                                label="Password"
+                                icon="lock"
+                                type="password"
+                                onInput={(e) => this.setState({password: e.target.value})}
+                            />
                             <div className="font-small blue-text d-flex justify-content-end pb-3">
                                 Lupa
                                 <div className="modal-signin-green" onClick={this.props.LupaPass}>&nbsp;Password?</div>
                             </div>
-                            <div className="text-center mb-3"><button className="button w-button" onClick={this.props.pindahPage}>Sign In</button></div>
+                            <div className="text-center mb-3"><button className="button-full w-full" onClick={this.props.pindahPage}>Sign In</button></div>
                             <p className="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2">or Sign in with:</p>
                             <div className="row my-3 d-flex justify-content-center">
                                 <button className="btn-white btn Ripple-parent mr-md-3 z-depth-1a">

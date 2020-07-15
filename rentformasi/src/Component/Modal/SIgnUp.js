@@ -1,8 +1,10 @@
 import React, { Component } from "react";
+import { MDBInput } from 'mdbreact';
 
 class SignUp extends Component {
     state = {
         username: "",
+        email: "",
         password: "",
         ulangipassword: ""
     }
@@ -18,7 +20,7 @@ class SignUp extends Component {
                                 <div className="close-modal" onClick={this.props.onClose}><div className="fa fa-times-circle"></div></div>
                                 <h2 className="dark-grey-text mb-5"><strong>Daftar Akun</strong></h2>
                             </div>
-                            <div className="md-form">
+                            {/* <div className="md-form">
                                 <div className="fa fa-at prefix"></div>
                                 <input type="email" className="form-control" value="" placeholder="Email" onChange={(e) => this.setState({email: e.target.value})}/>
                             </div>
@@ -33,7 +35,31 @@ class SignUp extends Component {
                             <div className="md-form">
                                 <div className="fa fa-lock prefix"></div>
                                 <input type="password" className="form-control" value="" placeholder="Ulangi Password" onChange={(e) => this.setState({ulangpassword: e.target.value})}/>
-                            </div>
+                            </div> */}
+                            <MDBInput
+                                label="Email"
+                                icon="at"
+                                type="email"
+                                onInput={(e) => this.setState({email: e.target.value})}
+                            />
+                            <MDBInput
+                                label="Username"
+                                icon="user"
+                                type="text"
+                                onInput={(e) => this.setState({username: e.target.value})}
+                            />
+                            <MDBInput
+                                label="Password"
+                                icon="lock"
+                                type="password"
+                                onInput={(e) => this.setState({password: e.target.value})}
+                            />
+                            <MDBInput
+                                label="Ulangi Password"
+                                icon="lock"
+                                type="password"
+                                onInput={(e) => this.setState({ulangipassword: e.target.value})}
+                            />
                             <div className="text-center mb-3"><button className="button w-button" onClick={this.props.pindahPage}>Sign Up</button></div>
                             <p className="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2">or Sign Up with:</p>
                             <div className="row my-3 d-flex justify-content-center">
