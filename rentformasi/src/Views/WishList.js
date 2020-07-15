@@ -1,27 +1,8 @@
 import React, { Component } from 'react';
-import axios from "axios";
-import Recipe from '../Component/Recipe/Recipe';
+import { NavLink } from 'react-router-dom';
 
 class WishList extends Component{
-    state = {
-        post: []
-    }
-
-    getPostAPI = () => {
-        axios.get('http://localhost:3001/wishlist')
-        .then((result)=>{
-            this.setState({
-                post: result.data
-            })
-        })
-    }
-
-    // componentDidMount(){
-    //     this.getPostAPI();
-    // }
-
     componentDidMount(){
-        this.getPostAPI();
         //session kalo belum login
         const session = localStorage.getItem('session')
         if (session !== "active"){
@@ -62,7 +43,18 @@ class WishList extends Component{
                                         </form>
                                     </div>                                
                                 </div>
-                                <Recipe/>      
+                                <div className="w-commerce-commercecartlist cart-list"> 
+                                    <div className="w-commerce-commercecartfooter cart-footer">
+                                        <div className="w-commerce-commercecartlineitem">
+                                            <div>Subtotal</div>
+                                            <div className="w-commerce-commercecartordervalue">Rp. 5000</div>
+                                        </div>
+                                    </div> 
+                                    <div className="margin-button-keranjang">
+                                        <NavLink to="/inputdata"><button className="button-full w-full">Bayar Sekarang</button></NavLink>
+                                        <NavLink to="/"><button className="button-white w-full-white">Sewa Lagi</button></NavLink>
+                                    </div>
+                                </div>     
                         </div>
                     </div>
                 </div>
