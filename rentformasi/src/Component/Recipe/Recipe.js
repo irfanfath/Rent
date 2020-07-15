@@ -16,13 +16,10 @@ class Recipe extends Component{
                                 <NavLink to="/inputdata"><button className="button-full w-full">Bayar Sekarang</button></NavLink>
                                 <NavLink to="/"><button className="button-white w-full-white">Sewa Lagi</button></NavLink>
                             </div>
-                    </div>
-                    
-
-                 
-        )
-    }
-}
+                    </div>    
+                )
+            }
+        }
 
 const mapStateToProps = (state)=>{
     return{
