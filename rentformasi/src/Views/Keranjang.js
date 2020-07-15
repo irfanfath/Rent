@@ -3,9 +3,15 @@ import { NavLink } from 'react-router-dom';
 import Login from '../Component/Modal/Login';
 
 class Keranjang extends Component{
-    state = {
-        showLogin : false
+    constructor(props) {
+        super(props);
+        this.state = {
+            qty: 1,
+            price: 5000,
+            showLogin: false,
+        };
     }
+
     componentDidMount(){
         //session kalo belum login
         const session = localStorage.getItem('session')
@@ -14,6 +20,24 @@ class Keranjang extends Component{
         }
     }
 
+    handleIncerement = () => {
+        this.setState({
+            qty: this.state.qty + 1
+        });
+    }
+
+    handleDecrement = () => {
+        if(this.state.qty < 2){
+            this.setState({
+              qty:1
+            });
+          }else {
+            this.setState({
+              qty: this.state.qty- 1,
+            });
+          }
+    }
+      
     render(){
        return(
             <div className="page-wrapper">
@@ -33,14 +57,15 @@ class Keranjang extends Component{
                                         <img  src="https://www.otomotifer.com/wp-content/uploads/2019/04/Mobil-City-Car-Murah-Honda.jpg" alt=""/>
                                         <div className="margin-qty">
                                         <div className="title-qty">Qty</div>
-                                            <div className="fa fa-minus-circle prefix"></div>
-                                            <input type="text" className="input-qty subscribe-keranjang w-input-qty" placeholder="Qty" id="qty" required="" defaultValue="1"/>
-                                            <div className="fa fa-plus-circle prefix"></div>
+                                            <div className="fa fa-minus-circle prefix" onClick={this.handleDecrement}></div>
+                                            <input type="text" className="input-qty subscribe-keranjang w-input-qty" placeholder="Qty" id="qty" required="" value={this.state.qty} readOnly/>
+                                            <div className="fa fa-plus-circle prefix" onClick={this.handleIncerement}></div>
                                         </div>
                                     </div>
                                     <div className="side-cart">
                                         <div className="title-keranjang">A successful marketing plan relies heavily on the pulling-power of advertising copy. </div>
-                                        <div className="harga-keranjang">Rp. 5000 </div>
+                                        <div className="harga-keranjang">Rp. {this.state.price} </div>
+                                        <button className="button w-button" onClick={this.handleCount}>12312</button>
                                     </div>  
                                     <div className="w-form-date">
                                         <form className="subscribe-form-date">
