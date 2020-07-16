@@ -9,6 +9,7 @@ class Keranjang extends Component{
             qty: 1,
             price: 5000,
             showLogin: false,
+            totalprice: 0
         };
     }
 
@@ -22,7 +23,10 @@ class Keranjang extends Component{
 
     handleIncerement = () => {
         this.setState({
-            qty: this.state.qty + 1
+            qty: this.state.qty + 1,
+        }, () => {
+            this.handlePrice()
+
         });
     }
 
@@ -34,8 +38,17 @@ class Keranjang extends Component{
           }else {
             this.setState({
               qty: this.state.qty- 1,
+            }, () => {
+        this.handlePrice()
+
             });
           }
+    }
+
+    handlePrice = () => {
+        this.setState({
+            totalprice: this.state.qty * this.state.price
+        })
     }
       
     render(){
@@ -65,7 +78,7 @@ class Keranjang extends Component{
                                     </div>
                                     <div className="side-cart">
                                         <div className="title-keranjang">A successful marketing plan relies heavily on the pulling-power of advertising copy. </div>
-                                        <div className="harga-keranjang">Rp. {this.state.price} </div>
+                                        <div className="harga-keranjang">Rp. {this.state.totalprice === 0? this.state.price : this.state.totalprice}  </div>
                                     </div>  
                                     <div className="w-form-date">
                                         <form className="subscribe-form-date">
