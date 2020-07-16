@@ -41,6 +41,11 @@ class UserNavbar extends React.Component {
                     <span className="user-menu">Wish List</span>
                     <div className="w-commerce-commercecartopenlinkcount item-count">0</div>
                   </DropdownItem>
+                  <DropdownItem onClick={this.props.Cart}>
+                  <div className="fa fa-shopping-bag prefix" />
+                    <span className="user-menu">Cart</span>
+                    <div className="w-commerce-commercecartopenlinkcount item-count">2</div>
+                  </DropdownItem>
                   <DropdownItem to="/admin/user-profile" tag={Link}>
                   <div className="fa fa-cog prefix" />
                     <span className="user-menu">Settings</span>
@@ -48,6 +53,7 @@ class UserNavbar extends React.Component {
                   <DropdownItem to="/admin/user-profile" tag={Link}>
                   <div className="fa fa-calendar-alt prefix" />
                     <span className="user-menu">Activity</span>
+                    <div className="w-commerce-commercecartopenlinkcount item-count">0</div>
                   </DropdownItem>
                   <DropdownItem to="/admin/user-profile" tag={Link}>
                   <div className="fa fa-headset prefix" />

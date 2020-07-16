@@ -50,6 +50,10 @@ class Header extends Component{
       moveWish = () => {
           window.location.href = "#/wish"
       }
+
+      moveCart = () => {
+        window.location.href = "#/keranjang"
+    }
       
       moveProfile = () => {
           window.location.href = "#/profile"
@@ -93,7 +97,7 @@ class Header extends Component{
                                                                                 </div>
                             } */}
                             {
-                                this.state.session === "active"? <UserNavbar Logout={this.handleLogout} Wish={this.moveWish} Profile={this.moveProfile} /> :  <ButtonLogin klik={()=> this.setState({showLogin: true})} />
+                                this.state.session === "active"? <UserNavbar Logout={this.handleLogout} Wish={this.moveWish} Profile={this.moveProfile} Cart={this.moveCart} /> :  <ButtonLogin klik={()=> this.setState({showLogin: true})} />
 
                             }
                             {
