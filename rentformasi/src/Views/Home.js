@@ -3,8 +3,28 @@ import { NavLink } from "react-router-dom";
 import ListPenginapan from "../Component/ListData/ListPenginapan";
 import ListSport from "../Component/ListData/ListSport";
 import ListBestRent from "../Component/ListData/ListBestRent";
+// import axios from "axios";
 
 class Home extends Component{
+
+    // componentDidMount(){
+    //     this.handleGetMenu()
+    // }
+
+    // handleGetMenu = () => {
+    //     axios.get('http://localhost:4000/users/', {
+    //         headers : {
+    //             authorization : `Bearer ${localStorage.getItem('token')}`,
+    //             Accept : 'application/json',
+    //             "Content-Type" : 'application/json' 
+    //         }
+    //     }).then((res) => {
+    //         console.log("Get Menu : ", res)
+    //     }).catch((err) =>{
+    //         console.log("Get Menu : ", err)
+    //     })
+    // }
+
     render(){
         return(
             <div className="margin-home-box">

@@ -1,13 +1,26 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
+import axios from "axios"
 
 class WishList extends Component{
-    componentDidMount(){
-        //session kalo belum login
-        const session = localStorage.getItem('session')
-        if (session !== "active"){
+
+    handleGetMenu = () => {
+        axios.get('http://localhost:4000/users/', {
+            headers : {
+                authorization : `Bearer ${localStorage.getItem('token')}`,
+                Accept : 'application/json',
+                "Content-Type" : 'application/json' 
+            }
+        }).then((res) => {
+            console.log("Get Menu : ", res)
+        }).catch((err) =>{
+            console.log("Get Menu : ", err)
             window.location.href = "#/"
-        }
+        })
+    }
+
+    componentDidMount(){
+        this.handleGetMenu()
     }
 
     render(){

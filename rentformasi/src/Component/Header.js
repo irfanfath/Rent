@@ -7,14 +7,18 @@ import UserNavbar from "../Component/UserNavbar";
 import Login from "./Modal/Login";
 import ForgotPass from "./Modal/ForgotPass";
 import SignUp from "./Modal/SignUp";
+import axios from "axios";
 
 class Header extends Component{
     state = {
+        username: "",
+        password: "",
         collapseID: "",
         showLogin: false,
         showForgotPass: false,
         showSignUp: false,
-        // loginModal: false,
+        token : localStorage.getItem("token"),
+        nameUser: localStorage.getItem("nameUser"),
         session : localStorage.getItem("session")
       };
       toggleCollapse = collapseID => () => {
@@ -22,18 +26,37 @@ class Header extends Component{
           collapseID: prevState.collapseID !== collapseID ? collapseID : ""
         }));
       }
-    //   toggleModal = state => {
-    //     this.setState({
-    //       [state]: !this.state[state]
-    //     });
-    //   };
-
-      movePage = () => {
-        localStorage.setItem('session', "active");
+      handlePostLogin = (user, pass) => {
+        const data = {
+          username : user,
+          password: pass
+        }
+    
+        axios.post('http://localhost:4000/users/authenticate', data)
+        .then((res) => {
+            console.log(res)
+          if(res.data.code === 0){
+              localStorage.setItem("token", res.data.token)
+              localStorage.setItem("nameUser", res.data.firstName)
+              this.setState({token: res.data.token, nameUser: res.data.firstName})
+            //   window.location.reload()
+          }else{
+            alert(res.data)
+          }
+        }).catch((err) => {
+            console.log(err)
+        }); 
         this.setState({
             showLogin: false
         })
       }
+
+    //   movePage = () => {
+    //     localStorage.setItem('session', "active");
+    //     this.setState({
+    //         showLogin: false
+    //     })
+    //   }
 
       moveGantiPass = () => {
           this.setState({
@@ -83,25 +106,12 @@ class Header extends Component{
                             <div className="menu-button w-nav-button">
                                 <div className="w-icon-nav-menu" onClick={this.toggleCollapse("basicCollapse")}></div>
                             </div>
-    
-                            {/* {
-                                this.state.session === "active"? <UserNavbar /> : <div className="w-commerce-commercecartopenlink cart-button w-inline-block" onClick={() => this.toggleModal("loginModal")}><ButtonLogin/>
-                                                                                    <Modal
-                                                                                        className="modal-dialog-centered"
-                                                                                        isOpen={this.state.loginModal}
-                                                                                        toggle={() => this.toggleModal("loginModal")}
-                                                                                        >
-                                                                                        <SignIn
-                                                                                        closeModal={() => this.toggleModal("loginModal")}/>
-                                                                                    </Modal>
-                                                                                </div>
-                            } */}
                             {
-                                this.state.session === "active"? <UserNavbar Logout={this.handleLogout} Wish={this.moveWish} Profile={this.moveProfile} Cart={this.moveCart} /> :  <ButtonLogin klik={()=> this.setState({showLogin: true})} />
+                                this.state.token !== null? <UserNavbar nameUser={this.state.nameUser} Logout={this.handleLogout} Wish={this.moveWish} Profile={this.moveProfile} Cart={this.moveCart} /> :  <ButtonLogin klik={()=> this.setState({showLogin: true})} />
 
                             }
                             {
-                                this.state.showLogin ? <Login pindahPage={this.movePage} LupaPass={()=> this.setState({showForgotPass: true, showLogin: false})} daftar={()=> this.setState({showSignUp: true, showLogin: false})} onClose={()=> this.setState({showLogin: false})}/> : null
+                                this.state.showLogin ? <Login pindahPage={this.handlePostLogin} LupaPass={()=> this.setState({showForgotPass: true, showLogin: false})} daftar={()=> this.setState({showSignUp: true, showLogin: false})} onClose={()=> this.setState({showLogin: false})}/> : null
                             }
                             {
                                 this.state.showForgotPass ? <ForgotPass pindahPage={this.moveGantiPass} onClose={()=> this.setState({showForgotPass: false})}/> : null

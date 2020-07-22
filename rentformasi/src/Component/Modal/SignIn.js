@@ -3,6 +3,7 @@ import { MDBContainer, MDBCardBody, MDBInput, MDBBtn, MDBIcon } from 'mdbreact';
 import { Modal } from "reactstrap";
 import SignUp from "./SignUp";
 import ForgotPass from "./ForgotPass";
+import axios from "axios";
 
 class SignIn extends Component {
   state = {
@@ -22,6 +23,26 @@ class SignIn extends Component {
     window.location.href = "/";
   }
 
+  handlePostLogin = () => {
+    console.log("login")
+
+    const data = {
+      username : this.state.username,
+      password: this.state.password
+    }
+
+    axios.post('http://localhost:4000/users/authenticate', data)
+    .then((res) => {
+      if(res.data.code === 0){
+        alert("success")
+      }else{
+        alert(res.data.message)
+      }
+    }).catch((err) => {
+
+    })
+  }
+
   render () {
     return (
       <MDBContainer>
@@ -29,7 +50,7 @@ class SignIn extends Component {
               <div className="text-login">
               <div className="close-modal" onClick={this.props.closeModal}><MDBIcon icon="times-circle"/></div>
                 <h2 className="dark-grey-text mb-5">
-                  <strong>Sign in</strong>
+                  <strong>Sigceecßßn in</strong>
                 </h2>
               </div>
               <MDBInput
@@ -58,7 +79,8 @@ class SignIn extends Component {
                 </div>
               </div>
               <div className="text-center mb-3">
-                <button className="button w-button" onClick={this.movePage}>Sign In</button>
+                {/* <button className="button w-button" onClick={this.movePage}>Sign In</button> */}
+                <button className="button w-button" onClick={this.handlePostLogin}>Sign In</button>
               </div>
               <p className="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2">
                 or Sign in with:

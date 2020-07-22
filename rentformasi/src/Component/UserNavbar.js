@@ -27,7 +27,7 @@ class UserNavbar extends React.Component {
                       <img className="rounded-circle" alt="..." src={require("../Component/Images/profile.jpg")} />
                     </span>
                       <div className="title-user">
-                        Jessica Jones <div className="fa fa-angle-down prefix" />
+                        {this.props.nameUser} <div className="fa fa-angle-down prefix" />
                       </div>
                   </Media>
                 </DropdownToggle>

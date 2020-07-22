@@ -7,6 +7,30 @@ class Login extends Component {
         password: ""
     }
 
+    // handlePostLogin = () => {
+    //     console.log("login")
+    
+    //     const data = {
+    //       username : this.state.username,
+    //       password: this.state.password
+    //     }
+
+    //     console.log(data)
+    
+    //     axios.post('http://localhost:4000/users/authenticate', data)
+    //     .then((res) => {
+    //         console.log(res)
+    //       if(res.data.code === 0){
+    //           localStorage.setItem("token", res.data.token)
+    //           alert("login success")
+    //       }else{
+    //         alert(res.data)
+    //       }
+    //     }).catch((err) => {
+    //         console.log(err)
+    //     })
+    //   }
+      
     render() {
         return (
         <div className="modal-show">
@@ -34,7 +58,8 @@ class Login extends Component {
                                 Lupa
                                 <div className="modal-signin-green" onClick={this.props.LupaPass}>&nbsp;Password?</div>
                             </div>
-                            <div className="text-center mb-3"><button className="button-full w-full" onClick={this.props.pindahPage}>Sign In</button></div>
+                            <div className="text-center mb-3"><button className="button-full w-full" onClick={() => this.props.pindahPage(this.state.username, this.state.password)}>Sign In</button></div>
+                            {/* <div className="text-center mb-3"><button className="button-full w-full" onClick={this.handlePostLogin}>Sign In</button></div> */}
                             <p className="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2">or Sign in with:</p>
                             <div className="row my-3 d-flex justify-content-center">
                                 <button className="btn-white btn Ripple-parent mr-md-3 z-depth-1a">
