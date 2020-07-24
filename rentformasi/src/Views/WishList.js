@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import axios from "axios"
+import Login from '../Component/Modal/Login';
 
 class WishList extends Component{
+    state = {
+        showLogin: false
+    }
 
     handleGetMenu = () => {
-        axios.get('http://localhost:4000/users/', {
+        axios.get('http://irfanfath.site/Rentformai_Login/users/user', {
             headers : {
                 authorization : `Bearer ${localStorage.getItem('token')}`,
                 Accept : 'application/json',
@@ -13,9 +17,11 @@ class WishList extends Component{
             }
         }).then((res) => {
             console.log("Get Menu : ", res)
+            this.setState({showLogin: false})
         }).catch((err) =>{
             console.log("Get Menu : ", err)
-            window.location.href = "#/"
+            window.location.href = "#/";
+            this.setState({showLogin: true})
         })
     }
 
@@ -99,7 +105,16 @@ class WishList extends Component{
                                         <NavLink to="/inputdata"><button className="button-full w-full">Bayar Sekarang</button></NavLink>
                                         <NavLink to="/"><button className="button-white w-full-white">Sewa Lagi</button></NavLink>
                                     </div>
-                                </div>     
+                                </div>  
+                                {
+                                this.state.showLogin ? <Login 
+                                    pindahPage={this.handlePostLogin}
+                                    LupaPass={()=> this.setState({showForgotPass: true, showLogin: false})}
+                                    daftar={()=> this.setState({showSignUp: true, showLogin: false})}
+                                    onClose={()=> this.setState({showLogin: false})}
+                                    failLogin={this.state.failLogin}
+                                    /> : null
+                            }   
                         </div>
                     </div>
                 </div>

@@ -14,6 +14,7 @@ class Header extends Component{
         username: "",
         password: "",
         collapseID: "",
+        failLogin : false,
         showLogin: false,
         showForgotPass: false,
         showSignUp: false,
@@ -32,23 +33,20 @@ class Header extends Component{
           password: pass
         }
     
-        axios.post('http://localhost:4000/users/authenticate', data)
+        axios.post('http://irfanfath.site/Rentformai_Login/users/authenticate', data)
         .then((res) => {
             console.log(res)
           if(res.data.code === 0){
               localStorage.setItem("token", res.data.token)
-              localStorage.setItem("nameUser", res.data.firstName)
-              this.setState({token: res.data.token, nameUser: res.data.firstName})
+              localStorage.setItem("nameUser", res.data.data.firstName)
+              this.setState({token: res.data.token, nameUser: res.data.data.firstName, showLogin: false})
             //   window.location.reload()
           }else{
-            alert(res.data)
+            this.setState({failLogin: true, showLogin: true})
           }
         }).catch((err) => {
             console.log(err)
-        }); 
-        this.setState({
-            showLogin: false
-        })
+        });      
       }
 
     //   movePage = () => {
@@ -111,7 +109,13 @@ class Header extends Component{
 
                             }
                             {
-                                this.state.showLogin ? <Login pindahPage={this.handlePostLogin} LupaPass={()=> this.setState({showForgotPass: true, showLogin: false})} daftar={()=> this.setState({showSignUp: true, showLogin: false})} onClose={()=> this.setState({showLogin: false})}/> : null
+                                this.state.showLogin ? <Login 
+                                    pindahPage={this.handlePostLogin}
+                                    LupaPass={()=> this.setState({showForgotPass: true, showLogin: false})}
+                                    daftar={()=> this.setState({showSignUp: true, showLogin: false})}
+                                    onClose={()=> this.setState({showLogin: false})}
+                                    failLogin={this.state.failLogin}
+                                    /> : null
                             }
                             {
                                 this.state.showForgotPass ? <ForgotPass pindahPage={this.moveGantiPass} onClose={()=> this.setState({showForgotPass: false})}/> : null

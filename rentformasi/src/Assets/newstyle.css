@@ -568,6 +568,11 @@
     margin-bottom: 10px;
 }
 
+.wrong-login {
+    color: red;
+    padding-bottom: 1rem;
+}
+
 @media (max-width: 991px) {
     .input-tanggal {
         height: 35px;

@@ -6,7 +6,6 @@ class Login extends Component {
         username: "",
         password: ""
     }
-
     // handlePostLogin = () => {
     //     console.log("login")
     
@@ -54,6 +53,10 @@ class Login extends Component {
                                 type="password"
                                 onInput={(e) => this.setState({password: e.target.value})}
                             />
+                            {this.props.failLogin? 
+                            (<div className="font-small blue-text d-flex justify-content-end wrong-login">
+                                    Username atau password anda salah
+                            </div>) : null}
                             <div className="font-small blue-text d-flex justify-content-end pb-3">
                                 Lupa
                                 <div className="modal-signin-green" onClick={this.props.LupaPass}>&nbsp;Password?</div>
