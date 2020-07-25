@@ -11,7 +11,6 @@ import {
   Container,
   Media
 } from "reactstrap";
-// import "../Assets/_navbar-dropdown.scss"
 
 class UserNavbar extends React.Component {
   render() {

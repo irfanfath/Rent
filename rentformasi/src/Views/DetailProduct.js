@@ -1,33 +1,69 @@
 import React, { Component } from "react";
-import axios from "axios"
 import ListRelated from "../Component/ListData/ListRelated";
 import Login from "../Component/Modal/Login";
 import ForgotPass from "../Component/Modal/ForgotPass";
 import SignUp from "../Component/Modal/SignUp";
+import axios from "axios";
 
 class DetailProduct extends Component{
     state = {
+        username: "",
+        password: "",
+        failLogin : false,
+        token : localStorage.getItem("token"),
+        nameUser: localStorage.getItem("nameUser"),
+        session : localStorage.getItem("session"),
         showLogin: false,
         showForgotPass: false,
         showSignUp: false,
         post: {
-            title: '',
-            body: ''
+            lastName: ''
         }
     }
+
+    // componentDidMount(){
+    //     let id = this.props.match.params.idBarang;
+    //     axios.get('http://irfanfath.site/Rentformai_Login/users/user').then(res => {
+    //         let post = res.data;
+    //         this.setState({
+    //             post : {
+    //                 firstName: post.firstName,
+    //                 // harga: post.harga,
+    //                 // desc: post.desc
+    //             }
+    //         })
+    //     })     
+    // }
+    
     componentDidMount(){
-        let id = this.props.match.params.idBarang;
-        axios.get(`http://localhost:3001/posts/${id}`).then(res => {
-            let post = res.data;
+        // let id = this.props.match.params.idBarang;
+        axios.get('http://irfanfath.site/Rentformai_Login/users/user').then((res) => {
+            let post = res.data.data;
             this.setState({
                 post : {
-                    title: post.title,
-                    harga: post.harga,
-                    desc: post.desc
+                    lastName: post.lastName
                 }
             })
         })     
     }
+
+
+    // handleGetMenu = () => {
+        // axios.get('http://irfanfath.site/Rentformai_Login/users/user', {
+        //     headers : {
+        //         authorization : `Bearer ${localStorage.getItem('token')}`,
+        //         Accept : 'application/json',
+        //         "Content-Type" : 'application/json' 
+        //     }
+        // }).then((res) => {
+        //     console.log("Get Menu : ", res.data.data.firstName)
+        //     // window.location.href = "#/keranjang";
+        // }).catch((err) =>{
+        //     console.log("Get Menu : ", err)
+        //     // window.location.href = "#/";
+        //     this.setState({showLogin: true})
+        // })   
+    // }   
 
     handleCekLogin = () => {
         const session = localStorage.getItem('session')
@@ -37,15 +73,41 @@ class DetailProduct extends Component{
             })
         } else (
             window.location.href = "#/keranjang"
+            // axios.post('http://irfanfath.site/Rentformai_Login/users/authenticate', data)
+            // .then((res)=> {
+            //     if(res.data.code === 0){
+            //         localStorage.setItem("")
+            //         window.location.href = "#/keranjang"
+            //     } else {
+            //         this.setState({
+            //             failCart: true
+            //         })
+            //     }
+            // })
         )
     }
 
-      movePage = () => {
-        localStorage.setItem('session', "active");
-        window.location.href = "#/keranjang";
-        this.setState({
-            showLogin: false
-        })
+    handlePostLogin = (user, pass) => {
+        const data = {
+          username : user,
+          password: pass
+        }
+    
+        axios.post('http://irfanfath.site/Rentformai_Login/users/authenticate', data)
+        .then((res) => {
+            console.log(res)
+          if(res.data.code === 0){
+              localStorage.setItem("token", res.data.token)
+              localStorage.setItem("nameUser", res.data.data.firstName)
+              localStorage.setItem('session', "active");
+              this.setState({token: res.data.token, nameUser: res.data.data.firstName, showLogin: false})
+              window.location.reload()
+          }else{
+            this.setState({failLogin: true, showLogin: true})
+          }
+        }).catch((err) => {
+            console.log(err)
+        });      
       }
 
       moveGantiPass = () => {
@@ -67,7 +129,7 @@ class DetailProduct extends Component{
                     <div className="wrapper side-paddings">
                         <div className="product">
                             <div className="product-info">
-                                <h2>fhuewhfwueuf</h2>
+                                <h2>{this.state.post.lastName}</h2>
                                 <div className="rating">
                                     <span role="img" aria-label="star">&#11088;</span>
                                     <span role="img" aria-label="star">&#11088;</span>
@@ -79,7 +141,7 @@ class DetailProduct extends Component{
                                     <div className="margin-button-detail-menu">
                                         <div><button className="button-full w-full" onClick={this.handleCekLogin}>Sewa Sekarang</button></div>
                                         {
-                                            this.state.showLogin ? <Login pindahPage={this.movePage} LupaPass={()=> this.setState({showForgotPass: true, showLogin: false})} daftar={()=> this.setState({showSignUp: true, showLogin: false})} onClose={()=> this.setState({showLogin: false})}/> : null
+                                            this.state.showLogin ? <Login pindahPage={this.handlePostLogin} LupaPass={()=> this.setState({showForgotPass: true, showLogin: false})} daftar={()=> this.setState({showSignUp: true, showLogin: false})} onClose={()=> this.setState({showLogin: false})} failLogin={this.state.failLogin}/> : null
                                         } 
                                         {
                                             this.state.showForgotPass ? <ForgotPass pindahPage={this.moveGantiPass} onClose={()=> this.setState({showForgotPass: false})}/> : null

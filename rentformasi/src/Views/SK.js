@@ -6,7 +6,7 @@ class SK extends Component{
         return(
             <div className="section">
                         <div className="section no-padding-vertical">
-                            <div className="wrapper side-paddings">
+                            <div className="wrapper-semi side-paddings">
                                 <h3 className="no-margin w-hidden-small w-hidden-tiny">Syarat & Ketentuan</h3>
                             </div>
                         </div>

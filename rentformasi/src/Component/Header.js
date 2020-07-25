@@ -39,6 +39,7 @@ class Header extends Component{
           if(res.data.code === 0){
               localStorage.setItem("token", res.data.token)
               localStorage.setItem("nameUser", res.data.data.firstName)
+              localStorage.setItem('session', "active");
               this.setState({token: res.data.token, nameUser: res.data.data.firstName, showLogin: false})
             //   window.location.reload()
           }else{
@@ -48,13 +49,6 @@ class Header extends Component{
             console.log(err)
         });      
       }
-
-    //   movePage = () => {
-    //     localStorage.setItem('session', "active");
-    //     this.setState({
-    //         showLogin: false
-    //     })
-    //   }
 
       moveGantiPass = () => {
           this.setState({
@@ -81,14 +75,16 @@ class Header extends Component{
       }
 
       handleLogout = () => {
-        //   localStorage.removeItem('session')
-          localStorage.clear();
-          window.location.href = "/"
+        //   localStorage.removeItem('token')
+        localStorage.clear();
+        sessionStorage.clear();
+        window.location.reload()
+
       }
 
     render(){
         return(
-            <div data-collapse="medium" data-animation="default" data-duration="400" className="nav-bar w-nav">
+            <div className="nav-bar w-nav">
                 <div className="nav-main">
                     <div className="wrapper nav-bar-wrapper">
 

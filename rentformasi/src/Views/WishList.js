@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import axios from "axios"
 import Login from '../Component/Modal/Login';
 
 class WishList extends Component{
@@ -8,25 +7,32 @@ class WishList extends Component{
         showLogin: false
     }
 
-    handleGetMenu = () => {
-        axios.get('http://irfanfath.site/Rentformai_Login/users/user', {
-            headers : {
-                authorization : `Bearer ${localStorage.getItem('token')}`,
-                Accept : 'application/json',
-                "Content-Type" : 'application/json' 
-            }
-        }).then((res) => {
-            console.log("Get Menu : ", res)
-            this.setState({showLogin: false})
-        }).catch((err) =>{
-            console.log("Get Menu : ", err)
-            window.location.href = "#/";
-            this.setState({showLogin: true})
-        })
-    }
+    // handleGetMenu = () => {
+    //     axios.get('http://irfanfath.site/Rentformai_Login/users/user', {
+    //         headers : {
+    //             authorization : `Bearer ${localStorage.getItem('token')}`,
+    //             Accept : 'application/json',
+    //             "Content-Type" : 'application/json' 
+    //         }
+    //     }).then((res) => {
+    //         console.log("Get Menu : ", res)
+    //         this.setState({showLogin: false})
+    //     }).catch((err) =>{
+    //         console.log("Get Menu : ", err)
+    //         window.location.href = "#/";
+    //         this.setState({showLogin: true})
+    //     })
+    // }
 
+    // componentDidMount(){
+    //     this.handleGetMenu()
+    // }
     componentDidMount(){
-        this.handleGetMenu()
+        //session kalo belum login
+        const session = localStorage.getItem('session')
+        if (session !== "active"){
+            window.location.href = "#/"
+        }
     }
 
     render(){
