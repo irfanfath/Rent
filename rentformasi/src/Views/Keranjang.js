@@ -54,20 +54,14 @@ class Keranjang extends Component{
     render(){
        return(
             <div className="page-wrapper">
-                <div className="section no-padding-vertical">
-                    <div className="wrapper side-paddings">
-                        <div className="breadcrumbs"><div className="link-grey">Home</div><img src="https://assets.website-files.com/5badda2935e11303a89a461e/5baf79eb570913b9781a96f2_arrow-right-mini-icon.svg" alt="" className="breadcrumbs-arrow" />
-                            <div>Konfirmasi pesanan</div>
-                        </div>
-                    </div>
-                </div>
                 <div className="section no-padding-top">
-                    <div className="wrapper side-paddings">
-                        <div className="keranjang">
-                            <div className="cart-heading">
-                            <div className="fa fa-shopping-cart prefix" />
+                <div className="cart-heading">
+                                <div className="fa fa-shopping-cart prefix" />
                                 <div className="title-cart">Keranjang Anda</div>
                             </div>
+                    <div className="wrapper side-paddings">
+                        <div className="keranjang">
+                            
                                 <div className="w-commerce-keranjang">
                                     <div className="keranjang-img"> 
                                         <img  src="https://www.otomotifer.com/wp-content/uploads/2019/04/Mobil-City-Car-Murah-Honda.jpg" alt=""/>
