@@ -12,7 +12,7 @@ const ListStatus = (props) => {
                                         <p className="title">{props.data.title}</p>
                                         <p>{props.data.desc}</p>
                                         <p><b className="label">Harga : Rp. {props.data.harga}</b></p> 
-                                        <NavLink to="/lacak"><button className="button w-status">Lihat Status Pesanan</button></NavLink> 
+                                        <NavLink to="/lacak"><button className="button-full w-full">Lihat Status Pesanan</button></NavLink> 
                                     </div>                                    
                                 </div>
     )
