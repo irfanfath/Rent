@@ -6665,6 +6665,19 @@ p {
     margin-bottom: 70px;
 }
 
+.cart-heading {
+    margin-bottom: 50px;
+    display: inline;
+    font-size: 30px;
+    margin-left: 20px;
+}
+
+.title-cart {
+    font-size: 25px;
+    display: inline;
+    margin-left: 20px;
+}
+
 .contact-social-heading {
     width: 100%;
     margin-bottom: 20px;

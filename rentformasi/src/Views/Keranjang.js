@@ -64,7 +64,10 @@ class Keranjang extends Component{
                 <div className="section no-padding-top">
                     <div className="wrapper side-paddings">
                         <div className="keranjang">
-                            <h4 className="contact-heading">Keranjang Anda : </h4>
+                            <div className="cart-heading">
+                            <div className="fa fa-shopping-cart prefix" />
+                                <div className="title-cart">Keranjang Anda</div>
+                            </div>
                                 <div className="w-commerce-keranjang">
                                     <div className="keranjang-img"> 
                                         <img  src="https://www.otomotifer.com/wp-content/uploads/2019/04/Mobil-City-Car-Murah-Honda.jpg" alt=""/>
