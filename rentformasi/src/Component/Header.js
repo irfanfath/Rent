@@ -22,11 +22,13 @@ class Header extends Component{
         nameUser: localStorage.getItem("nameUser"),
         session : localStorage.getItem("session")
       };
+
       toggleCollapse = collapseID => () => {
         this.setState(prevState => ({
           collapseID: prevState.collapseID !== collapseID ? collapseID : ""
         }));
       }
+
       handlePostLogin = (user, pass) => {
         const data = {
           username : user,
@@ -84,10 +86,9 @@ class Header extends Component{
 
     render(){
         return(
-            <div className="nav-bar w-nav">
+            <div data-collapse="medium" data-animation="default" className="nav-bar w-nav">                
                 <div className="nav-main">
                     <div className="wrapper nav-bar-wrapper">
-
                         <NavLink to="/" className="brand w-nav-brand w--current">
                                 Rentformasi
                         </NavLink>
@@ -125,9 +126,9 @@ class Header extends Component{
                     <div className="collapse-header">
                         <MDBCollapse id="basicCollapse" isOpen={this.state.collapseID}>
                             <div className="value-header-collapse">
-                                <NavLink className="isi-header-collapse" to="/jasa">FAQ</NavLink>
-                                <NavLink className="isi-header-collapse" to="/bantuan">Bantuan</NavLink>
-                                <NavLink className="isi-header-collapse" to="/jasa">Daftar Menjadi Vendor</NavLink>
+                                <NavLink className="isi-header-collapse" to="/jasa" onClick={this.toggleCollapse("")}>FAQ</NavLink>
+                                <NavLink className="isi-header-collapse" to="/bantuan" onClick={this.toggleCollapse("")}>Bantuan</NavLink>
+                                <NavLink className="isi-header-collapse" to="/jasa" onClick={this.toggleCollapse("")}>Daftar Menjadi Vendor</NavLink>
                             </div>                           
                         </MDBCollapse>
                     </div>
