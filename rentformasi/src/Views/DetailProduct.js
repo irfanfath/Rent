@@ -17,52 +17,54 @@ class DetailProduct extends Component{
         showForgotPass: false,
         showSignUp: false,
         post: {
-            lastName: ''
+            title: ''
         }
     }
 
+    // ini api kalo udah pake id map
+
     // componentDidMount(){
     //     let id = this.props.match.params.idBarang;
-    //     axios.get('http://irfanfath.site/Rentformai_Login/users/user').then(res => {
+    //     axios.get(`https://jsonplaceholder.typicode.com/post/${id}`).then(res => {
     //         let post = res.data;
     //         this.setState({
     //             post : {
-    //                 firstName: post.firstName,
-    //                 // harga: post.harga,
-    //                 // desc: post.desc
+    //                 title: post.title,
+    //                 harga: post.harga,
+    //                 desc: post.desc
     //             }
     //         })
     //     })     
     // }
     
     componentDidMount(){
-        // let id = this.props.match.params.idBarang;
-        axios.get('http://irfanfath.site/Rentformai_Login/users/user').then((res) => {
-            let post = res.data.data;
+        axios.get('https://jsonplaceholder.typicode.com/posts').then((res) => {
+            let post = res.data[0];
             this.setState({
                 post : {
-                    lastName: post.lastName
+                    title: post.title
                 }
             })
         })     
     }
 
+    // masih error session get menu nya ga ke delete, auth token
 
     // handleGetMenu = () => {
-        // axios.get('http://irfanfath.site/Rentformai_Login/users/user', {
-        //     headers : {
-        //         authorization : `Bearer ${localStorage.getItem('token')}`,
-        //         Accept : 'application/json',
-        //         "Content-Type" : 'application/json' 
-        //     }
-        // }).then((res) => {
-        //     console.log("Get Menu : ", res.data.data.firstName)
-        //     // window.location.href = "#/keranjang";
-        // }).catch((err) =>{
-        //     console.log("Get Menu : ", err)
-        //     // window.location.href = "#/";
-        //     this.setState({showLogin: true})
-        // })   
+    //     axios.get('http://irfanfath.site/Rentformai_Login/users/user', {
+    //         headers : {
+    //             authorization : `Bearer ${localStorage.getItem('token')}`,
+    //             Accept : 'application/json',
+    //             "Content-Type" : 'application/json' 
+    //         }
+    //     }).then((res) => {
+    //         console.log("Get Menu : ", res)
+    //         // window.location.href = "#/keranjang";
+    //     }).catch((err) =>{
+    //         console.log("Get Menu : ", err)
+    //         // window.location.href = "#/";
+    //         this.setState({showLogin: true})
+    //     })   
     // }   
 
     handleCekLogin = () => {
@@ -73,6 +75,8 @@ class DetailProduct extends Component{
             })
         } else (
             window.location.href = "#/keranjang"
+            // ini buat logic add to cart
+
             // axios.post('http://irfanfath.site/Rentformai_Login/users/authenticate', data)
             // .then((res)=> {
             //     if(res.data.code === 0){
@@ -129,7 +133,7 @@ class DetailProduct extends Component{
                     <div className="wrapper side-paddings">
                         <div className="product">
                             <div className="product-info">
-                                <h2>{this.state.post.lastName}</h2>
+                                <h2>{this.state.post.title}</h2>
                                 <div className="rating">
                                     <span role="img" aria-label="star">&#11088;</span>
                                     <span role="img" aria-label="star">&#11088;</span>

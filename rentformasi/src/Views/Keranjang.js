@@ -13,13 +13,13 @@ class Keranjang extends Component{
         };
     }
 
-    // componentDidMount(){
-    //     //session kalo belum login
-    //     const session = localStorage.getItem('session')
-    //     if (session !== "active"){
-    //         window.location.href = "#/"
-    //     }
-    // }
+    componentDidMount(){
+        //session kalo belum login
+        const session = localStorage.getItem('session')
+        if (session !== "active"){
+            window.location.href = "#/"
+        }
+    }
 
     handleIncerement = () => {
         this.setState({
