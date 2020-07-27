@@ -14,7 +14,7 @@ class ListLacak extends Component{
                                                 <div className="divider"></div>
                                 <div className="side-blocks">
                                     <div className="side-block">
-                                        <img src="https://assets.website-files.com/5badda2935e11303a89a461e/5bb5c77f0b5b7843138dc3c3_side-image-02.jpg" alt="" className="side-pesanan" />
+                                        <img src="https://www.otomotifer.com/wp-content/uploads/2019/04/Mobil-City-Car-Murah-Honda.jpg" alt="" className="side-pesanan" />
                                     </div>
                                         <div className="side-block no-padding-right">
                                             <div className="side-info">

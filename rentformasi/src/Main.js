@@ -17,7 +17,6 @@ import Keranjang from "./Views/Keranjang";
 import WishList from "./Views/WishList";
 import Tagihan from "./Views/Tagihan";
 import Cart from "./Views/Cart";
-import StatusPesanan from "./Views/StatusPesanan";
 import LacakPesanan from "./Views/LacakPesanan";
 import UserProfile from "./Views/UserProfile";
 import EditProfile from "./Views/EditProfile";
@@ -39,7 +38,6 @@ class Main extends Component {
             <Route path="/about" component={About}/>
             <Route path="/sk" component={SK}/>
             <Route path="/product_detail/:idBarang" component={DetailProduct}/>
-            <Route path="/statuspesanan" component={StatusPesanan}/>
             <Route path="/inputdata" component={InputData}/>
             <Route path="/editdata" component={EditProfile}/>
             <Route path="/selesai" component={Selesai}/>
