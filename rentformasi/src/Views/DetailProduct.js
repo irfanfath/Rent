@@ -161,7 +161,7 @@ class DetailProduct extends Component{
                                 </div>
                                 <div className="product-details-wrapper">
                                     <div className="shop-header">
-                                        <h5 className="no-margin">Detail Produk</h5>
+                                        <h2 className="no-margin">Detail Produk</h2>
                                         {/* <h5 className="no-margin">Ulasan</h5>
                                         <h5 className="no-margin">Pertanyaan</h5> */}
                                         <div className="sku">
@@ -173,7 +173,6 @@ class DetailProduct extends Component{
                                         </div>
                                     </div>
                                     <div className="product-details w-richtext">
-                                        <h4>Deskripsi Produk</h4>
                                         <p>{this.state.post.desc}</p>
                                         <h4>Simple &amp; Elegant Template</h4>
                                         <p>Headings, paragraphs, blockquotes, figures, images, and figure captions can all be styled after a className is added to the rich text element using the "When inside of" nested selector system.</p>
@@ -188,7 +187,7 @@ class DetailProduct extends Component{
                                         <p>{this.state.post.desc}</p>
                                         <p>‍</p>
                                     </div>
-                                    <div className="product-table">
+                                    {/* <div className="product-table">
                                         <div className="product-table-cell">
                                             <div>Width</div>
                                             <div className="product-table-info">
@@ -217,7 +216,7 @@ class DetailProduct extends Component{
                                                 <div> oz</div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                     </div>
