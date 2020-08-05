@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import { MDBCollapse } from "mdbreact";
 import ButtonLogin from "./Button/ButtonLogin";
-// import SignIn from "./Modal/SignIn";
 import UserNavbar from "../Component/UserNavbar";
 import Login from "./Modal/Login";
 import ForgotPass from "./Modal/ForgotPass";
@@ -13,8 +12,11 @@ class Header extends Component{
     state = {
         username: "",
         password: "",
+        email: "",
         collapseID: "",
+        showLoader: false,
         failLogin : false,
+        failSignUp : false,
         showLogin: false,
         showForgotPass: false,
         showSignUp: false,
@@ -23,30 +25,63 @@ class Header extends Component{
         session : localStorage.getItem("session")
       };
 
+      LoaderModal = () => {
+        return (
+            <div id="posisi-loader">
+              <div className="lds-dual-ring"></div>
+              <div className="title-loader">Harap Tunggu Beberapa Saat...</div>
+            </div>
+        )
+    }
+
       toggleCollapse = collapseID => () => {
         this.setState(prevState => ({
           collapseID: prevState.collapseID !== collapseID ? collapseID : ""
         }));
       }
 
-      handlePostLogin = (user, pass) => {
+      handlePostLogin = (username, password) => {
+        this.setState({
+          showLoader: true
+        })
         const data = {
-          username : user,
-          password: pass
+          "username" : username,
+          "password": password
         }
-    
-        axios.post('http://irfanfath.site/Rentformai_Login/users/authenticate', data)
-        // axios.post('http://localhost:4000/users/authenticate', data)
+        axios.post('http://irfanfath.site/Rentformasi_API/Login/masuk', data)
         .then((res) => {
             console.log(res)
-          if(res.data.code === 0){
-              localStorage.setItem("token", res.data.token)
-              localStorage.setItem("nameUser", res.data.data.firstName)
+          if(res.data.message === "success"){
+              localStorage.setItem("token", res.data.data.token)
+              // localStorage.setItem("nameUser", res.data.data.firstName)
               localStorage.setItem('session', "active");
-              this.setState({token: res.data.token, nameUser: res.data.data.firstName, showLogin: false})
+              this.setState({token: res.data.data.token, nameUser: res.data.data.firstName, showLogin: false, showLoader: false})
             //   window.location.reload()
           }else{
-            this.setState({failLogin: true, showLogin: true})
+            this.setState({failLogin: true, showLogin: true, showLoader: false})
+          }
+        }).catch((err) => {
+            console.log(err)
+        });      
+      }
+
+      handlePostSignUp = (username, email, password) => {
+        this.setState({
+          showLoader: true
+        })
+        const data = {
+          "username" : username,
+          "email" : email,
+          "password" : password
+        }   
+        axios.post('http://irfanfath.site/Rentformasi_API/Login/daftar', data)
+        .then((res) => {
+            console.log(res)
+          if(res.data.status_message === "berhasil medaftarkan akun"){
+              this.setState({showSignUp: false, showLogin: false, showLoader: false})
+            //   window.location.reload()
+          }else{
+            this.setState({showSignUp: true, failSignUp: true, showLoader: false})
           }
         }).catch((err) => {
             console.log(err)
@@ -58,12 +93,6 @@ class Header extends Component{
               showForgotPass: false
           })
       }
-
-      moveSignUp = () => {
-        this.setState({
-            showSignUp: false
-        })
-    }
 
       moveWish = () => {
           window.location.href = "#/wish"
@@ -81,7 +110,7 @@ class Header extends Component{
         //   localStorage.removeItem('token')
         localStorage.clear();
         sessionStorage.clear();
-        window.location.reload();
+        window.location.reload()
 
       }
 
@@ -103,8 +132,10 @@ class Header extends Component{
                                 <div className="w-icon-nav-menu" onClick={this.toggleCollapse("basicCollapse")}></div>
                             </div>
                             {
+                                this.state.showLoader ? <this.LoaderModal /> : null
+                            }
+                            {
                                 this.state.token !== null? <UserNavbar nameUser={this.state.nameUser} Logout={this.handleLogout} Wish={this.moveWish} Profile={this.moveProfile} Cart={this.moveCart} /> :  <ButtonLogin klik={()=> this.setState({showLogin: true})} />
-
                             }
                             {
                                 this.state.showLogin ? <Login 
@@ -119,7 +150,7 @@ class Header extends Component{
                                 this.state.showForgotPass ? <ForgotPass pindahPage={this.moveGantiPass} onClose={()=> this.setState({showForgotPass: false})}/> : null
                             }
                             {
-                                this.state.showSignUp ? <SignUp pindahPage={this.moveSignUp} onClose={()=> this.setState({showSignUp: false})}/> : null
+                                this.state.showSignUp ? <SignUp pindahPage={this.handlePostSignUp} onClose={()=> this.setState({showSignUp: false})} failSignUp={this.state.failSignUp}/> : null
                             }
                             
                         </div>

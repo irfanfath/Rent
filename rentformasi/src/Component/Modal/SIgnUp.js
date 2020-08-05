@@ -6,8 +6,13 @@ class SignUp extends Component {
         username: "",
         email: "",
         password: "",
-        ulangipassword: ""
+        // ulangipassword: ""
     }
+
+    submitHandler = event => {
+        event.preventDefault();
+        event.target.className += " was-validated";
+      };
 
     render() {
         return (
@@ -20,48 +25,28 @@ class SignUp extends Component {
                                 <div className="close-modal" onClick={this.props.onClose}><div className="fa fa-times-circle"></div></div>
                                 <h2 className="dark-grey-text mb-5"><strong>Daftar Akun</strong></h2>
                             </div>
-                            {/* <div className="md-form">
-                                <div className="fa fa-at prefix"></div>
-                                <input type="email" className="form-control" value="" placeholder="Email" onChange={(e) => this.setState({email: e.target.value})}/>
-                            </div>
-                            <div className="md-form">
-                                <div className="fa fa-user prefix"></div>
-                                <input type="email" className="form-control" value="" placeholder="Username" onChange={(e) => this.setState({username: e.target.value})}/>
-                            </div>
-                            <div className="md-form">
-                                <div className="fa fa-lock prefix"></div>
-                                <input type="password" className="form-control" value="" placeholder="Password" onChange={(e) => this.setState({password: e.target.value})}/>
-                            </div>
-                            <div className="md-form">
-                                <div className="fa fa-lock prefix"></div>
-                                <input type="password" className="form-control" value="" placeholder="Ulangi Password" onChange={(e) => this.setState({ulangpassword: e.target.value})}/>
-                            </div> */}
-                            <MDBInput
-                                label="Email"
-                                icon="at"
-                                type="email"
-                                onInput={(e) => this.setState({email: e.target.value})}
-                            />
-                            <MDBInput
-                                label="Username"
-                                icon="user"
-                                type="text"
-                                onInput={(e) => this.setState({username: e.target.value})}
-                            />
-                            <MDBInput
-                                label="Password"
-                                icon="lock"
-                                type="password"
-                                onInput={(e) => this.setState({password: e.target.value})}
-                            />
-                            <MDBInput
-                                label="Ulangi Password"
-                                icon="lock"
-                                type="password"
-                                onInput={(e) => this.setState({ulangipassword: e.target.value})}
-                            />
-                            <div className="text-center mb-3"><button className="button-full w-full" onClick={this.props.pindahPage}>Sign Up</button></div>
-                            <p className="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2">or Sign Up with:</p>
+                            <form
+                             className="needs-validation"
+                             onSubmit={this.submitHandler}
+                             noValidate
+                             >
+                            <MDBInput label="Email" icon="at" type="text" onInput={(e) => this.setState({email: e.target.value})} required>
+                                <div className="invalid-feedback">Email wajib diisi</div>
+                            </MDBInput>
+                            <MDBInput label="Username" icon="user" type="text" onInput={(e) => this.setState({username: e.target.value})} required>
+                                <div className="invalid-feedback">username wajib diisi</div>
+                            </MDBInput>
+                            <MDBInput autoComplete="on" label="Password" icon="lock" type="password" onInput={(e) => this.setState({password: e.target.value})} required>
+                                <div className="invalid-feedback">username wajib diisi</div>
+                            </MDBInput>
+                            {/* <MDBInput label="Ulangi Password" icon="lock" type="password" onInput={(e) => this.setState({ulangipassword: e.target.value})}/> */}
+                            {this.props.failSignUp? 
+                                (<div className="font-small blue-text d-flex justify-content-end wrong-login">
+                                        Silahkan lengkapi data dengan benar
+                                </div>) : null}
+                            <div className="text-center mb-3"><button className="button-full w-full" onClick={() => this.props.pindahPage(this.state.username, this.state.email, this.state.password)}>Sign Up</button></div>
+                            <p className="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2">or Sign Up with:</p>                          
+                            </form>
                             <div className="row my-3 d-flex justify-content-center">
                                 <button className="btn-white btn Ripple-parent mr-md-3 z-depth-1a">
                                     <div className="fab fa-facebook-f blue-text text-center"></div>
@@ -72,7 +57,7 @@ class SignUp extends Component {
                                 <button className="btn-white btn Ripple-parent z-depth-1a">
                                     <div className="fab fa-google-plus-g blue-text"></div>
                                 </button>
-                            </div>
+                            </div> 
                         </div>
                     </div>
                 </div>

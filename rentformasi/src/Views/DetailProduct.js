@@ -39,13 +39,12 @@ class DetailProduct extends Component{
     
     componentDidMount(){
         axios.get('https://jsonplaceholder.typicode.com/posts').then((res) => {
-            let post = res.data;
+            let post = res.data[0];
             this.setState({
                 post : {
                     title: post.title
                 }
             })
-            console.log(res.data)
         })     
     }
 
