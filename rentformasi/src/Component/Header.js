@@ -36,6 +36,7 @@ class Header extends Component{
         }
     
         axios.post('http://irfanfath.site/Rentformai_Login/users/authenticate', data)
+        // axios.post('http://localhost:4000/users/authenticate', data)
         .then((res) => {
             console.log(res)
           if(res.data.code === 0){
@@ -80,7 +81,7 @@ class Header extends Component{
         //   localStorage.removeItem('token')
         localStorage.clear();
         sessionStorage.clear();
-        window.location.reload()
+        window.location.reload();
 
       }
 

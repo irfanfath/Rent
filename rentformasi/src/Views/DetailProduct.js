@@ -39,19 +39,23 @@ class DetailProduct extends Component{
     
     componentDidMount(){
         axios.get('https://jsonplaceholder.typicode.com/posts').then((res) => {
-            let post = res.data[0];
+            let post = res.data;
             this.setState({
                 post : {
                     title: post.title
                 }
             })
+            console.log(res.data)
         })     
     }
 
     // masih error session get menu nya ga ke delete, auth token
 
-    // handleGetMenu = () => {
+    // handleGetMenu = async () => {
+    //     console.log(localStorage.getItem('token'))
     //     axios.get('http://irfanfath.site/Rentformai_Login/users/user', {
+    //     // axios.get('http://localhost:4000/users/user', {
+
     //         headers : {
     //             authorization : `Bearer ${localStorage.getItem('token')}`,
     //             Accept : 'application/json',
@@ -61,7 +65,8 @@ class DetailProduct extends Component{
     //         console.log("Get Menu : ", res)
     //         // window.location.href = "#/keranjang";
     //     }).catch((err) =>{
-    //         console.log("Get Menu : ", err)
+    //         const jsonError = JSON.parse(JSON.stringify(err))
+    //         console.log("Get Menu : ", jsonError)
     //         // window.location.href = "#/";
     //         this.setState({showLogin: true})
     //     })   
